@@ -1,0 +1,15 @@
+body {
+	background-color: #3c071b;
+	color: white;
+	font-family: "Atkinson Hyperlegible Next", sans-serif;
+	margin: 0;
+}
+
+pre, code, textarea, .id {
+	font-family: "Atkinson Hyperlegible Mono", monospace;
+}
+
+.buttons img, .buttons {
+	image-rendering: pixelated;
+}
+
