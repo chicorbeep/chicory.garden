@@ -1,11 +1,16 @@
+"use strict";
+
 const FACE_COLOR = "#3b061a";
 const TEXT_COLOR = "#ce4383";
 
 const HAND_COLORS = ["#ffffff", "#ffffff", "salmon", "#0000ff"];
 const HAND_LENGTHS = [0.7, 0.85, 0.9, 0.9];
 
-const canvas = document.querySelector("#hextime canvas")
+const canvas = document.querySelector("#hextime canvas");
 const ctx = canvas.getContext("2d");
+
+let hexTime = 0;
+let hexString = "";
 
 let currTime = new Date();
 let dayStart = new Date(
@@ -22,10 +27,10 @@ function updateTime() {
 	currTime = new Date();
 	hexTime = (2 ** 16 * (currTime - dayStart) / 86400000) % 2 ** 16;
 	hexString = Math.floor(hexTime).toString(16).toUpperCase();
-	document.querySelector("#hextime .time").innerText = "0x" + hexString;
+	document.querySelector("#hextime .time").innerText = "0x" + "0".repeat(4-hexString.length) + hexString;
 	document.querySelector("#hextime .date").innerText = currTime.toISOString().substring(0, 10);
 	document.querySelector("#hextime .hms").innerText = currTime.toISOString().substring(11, 16);
-	document.querySelector("title").innerText = "0x" + hexString;
+	document.querySelector("title").innerText = "0x" + "0".repeat(4-hexString.length) + hexString;
 }
 
 function drawClock() {

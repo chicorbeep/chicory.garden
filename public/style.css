@@ -5,6 +5,22 @@ body {
 	margin: 0;
 }
 
+a {
+	color: #FF9999;
+}
+
+a:visited {
+	color: #ff99cc;
+}
+
+a:focus, a:hover {
+	color: #FF3333;
+}
+
+a:active {
+	color: #ffbc40;
+}
+
 pre, code, textarea, .id {
 	font-family: "Atkinson Hyperlegible Mono", monospace;
 }
