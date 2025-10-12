@@ -1,9 +1,12 @@
+
+
 body {
 	background-color: #3c071b;
 	color: white;
 	font-family: "Atkinson Hyperlegible Next", sans-serif;
 	margin: 1em auto;
-	max-width: 80em;
+	max-width: 60em;
+	padding: 0 4em;
 }
 
 a {
