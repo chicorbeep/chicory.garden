@@ -3,7 +3,7 @@
 	--text-color: #fff;
 	--accent-pri: #ff8ec2;
 	--accent-sec: salmon;
-	--table-light: oklch(from var(--background) calc(l + 0.15) c h);
+	--table-light: oklch(from var(--background) calc(l + 0.2) c h);
 }
 
 body {
@@ -53,6 +53,16 @@ section-num,
 	color: var(--background);
 	padding: 4px;
 	text-align: center;
+}
+
+doc-notice {
+	display: block;
+	outline: 2px solid var(--table-light);
+	border-left: 10px solid var(--table-light);
+	padding: 1em;
+	margin: 1em;
+	line-height: 1.2;
+ 
 }
 
 header {
@@ -114,6 +124,10 @@ nav>ol {
 dt {
 	color: var(--accent-sec);
 	font-weight: bold;
+}
+
+dd {
+	line-height: 1.2;
 }
 
 table {
