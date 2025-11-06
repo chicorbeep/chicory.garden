@@ -81,7 +81,8 @@ doc-notice {
 	& strong {
 		display: block;
 		color: var(--accent-tri);
-		line-height: 1.2;
+		line-height: 0.8;
+		border-bottom: 2px solid;
 	}
 
 	&.caution {
