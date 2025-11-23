@@ -12,10 +12,13 @@ body {
 	background-color: var(--background);
 	color: var(--text-color);
 	line-height: 1.7;
-
 	&:has(#lower:checked) {
 		text-transform: lowercase;
 	}
+}
+
+main {
+	counter-reset: section -1;
 }
 
 hr {
@@ -30,36 +33,71 @@ small {
 	cursor: help;
 }
 
-h2,
-h3,
-h4 {
+h2, h3, h4 {
 	margin: 0.5em 0 0.5em;
 	line-height: 1;
 	display: flex;
 	align-items: center;
 	border-bottom: 2px solid;
-	white-space: pre;
 	clear: both;
+	white-space: pre;
+
+	&::before {
+		color: var(--background);
+		font-variant-numeric: tabular-nums;
+		padding: 4px;
+		text-align: center;
+		margin-right: 8px;
+		text-transform: none;
+	}
 }
 
 h2 {
 	color: var(--accent-pri);
-
-	&>section-num {
+	counter-increment: section;
+	counter-reset: subsection;
+	&::before {
+		content: counter(section);
 		background-color: var(--accent-pri);
 		min-width: 24px;
 	}
 }
 
-h3>section-num,
-#changelog h3 time {
-	background-color: var(--text-color);
-	min-width: 36px;
+h3 {
+	counter-increment: subsection;
+	counter-reset: subsubsection;
+	&::before {
+		content: counter(section) "." counter(subsection);
+		background-color: var(--text-color);
+		min-width: 36px;
+	}
 }
 
-h4>section-num {
-	background-color: var(--text-color);
-	min-width: 48px;
+h4 {
+	counter-increment: subsubsection;
+	&::before {
+		content: counter(section) "." counter(subsection) "." counter(subsubsection);
+		background-color: var(--text-color);
+		min-width: 48px;
+	}
+}
+
+
+.toc::before {
+	content: "#";
+}
+
+
+.apx {
+	counter-reset: section;
+	
+	& h2::before {
+		content: counter(section, upper-alpha);	
+	}
+
+	& :is(h3, h4)::before {
+		display: none;
+	}
 }
 
 section-num,
@@ -68,6 +106,8 @@ section-num,
 	color: var(--background);
 	padding: 4px;
 	text-align: center;
+	background-color: var(--text-color);
+	min-width: 36px;
 }
 
 doc-notice {
