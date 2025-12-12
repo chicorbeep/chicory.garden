@@ -8,25 +8,62 @@
 	--text-light: color-mix(in oklch, var(--text-color) 80%, var(--background) 20%);
 }
 
+
 body {
 	background-color: var(--background);
 	color: var(--text-color);
 	line-height: 1.7;
 	max-width: 50em;
+
 	&:has(#lower:checked) {
 		text-transform: lowercase;
 	}
 
 	&:has(#color:checked) {
-
 		.pro {
 			outline: 1px solid;
 			padding: 0 0.5em;
 		}
+
+		pride-gradient {
+			margin-left: 20px;
+			position: relative;
+
+			&::before {
+				position: absolute;
+				left: -20px;
+			}
+
+			&[flag="pride"]::before {
+				content: url(/img/flags/xx-pride-lgbt-progress.svg);
+
+			}
+
+			&[flag="transgender"]::before {
+				content: url(/img/flags/xx-pride-trans.svg);
+			}
+
+			&[flag="transfem"]::before {
+				content: url(/img/flags/xx-pride-transfeminine.svg);
+			}
+
+			&[flag="enby"]::before {
+				content: url(/img/flags/xx-pride-nonbinary.svg);
+			}
+
+			&[flag="robotkin"]::before, &[flag="robotkin-stepped"]::before {
+				content: url(/img/flags/xx-robotkin.svg);
+			}
+
+			&[flag="aroace"]::before {
+				content: url(/img/flags/xx-pride-aroace.svg);
+			}
+
+			&[flag="plural"]::before {
+				content: url(/img/flags/xx-plurality.svg);
+			}
+		}
 	}
-	
-	
-	
 }
 
 main {
@@ -262,6 +299,15 @@ fieldset {
 	max-width: 40em;
 	margin: auto;
 	border: 1px solid;
+	box-sizing: border-box;
+
+	display: grid;
+	grid-template-columns: repeat(3, 14px 1fr);
+	column-gap: 8px;
+
+	* {
+		margin: 0;
+	}
 }	
 
 figure:has(img)  {
@@ -282,17 +328,18 @@ figure:has(img)  {
 }
 
 figure:has(blockquote) {
-
-
-	margin: 2em 0 1em;
+	display: block;
+	margin: auto;
+	max-width: 40em;
 
 	& blockquote {
-		margin: 0 5em;
+	
+		margin: 0;
 	}
 
 	& figcaption {
 		text-align: right;
-		margin: 0 5em;
+		margin: 0;
 	}
 }
 
@@ -357,6 +404,33 @@ rfc-key {
 	font-weight: 500;
 }
 
+.key {
+
+	border: 2px solid var(--table-light);
+	padding: 0.5em 1em;
+	font-weight: bold;
+
+	.pro {
+		color: var(--background);
+		padding: 0 0.5em;
+	}
+
+	.inanimate {
+		background-color: var(--accent-pri);
+		border-radius: 1em 0;
+	}
+
+	.demonstrative {
+		background-color: var(--accent-sec);
+		border-radius: 0 1em;
+	}
+
+	.identifier {
+		background-color: var(--accent-tri);
+	}
+}
+
+
 .pro {
 	font-weight: bold;
 
@@ -375,6 +449,10 @@ rfc-key {
 
 .identifier {
 	color: var(--accent-tri);
+}
+
+.girl {
+	color: #f5a9b8;
 }
 
 blockquote {
@@ -400,6 +478,18 @@ blockquote {
 	}
 }
 
+.regex {
+	display: block;
+	line-height: 1.2;
+	letter-spacing: -1px;
+	border: none;
+
+	border: 2px solid var(--table-light);
+	padding: 0.5em 1em;
+
+
+}
+
 
 
 
@@ -409,48 +499,16 @@ footer {
 	text-align: center;
 }
 
-@media print {
-	:root {
-		--background: #ffffff;
-		--text-color: #000000;
-		--accent-pri: #b40054;
-		--accent-sec: rgb(148, 15, 0);
-		--accent-tri: #7a5e00;
-		--table-light: #ddd;
-		--text-light: #444444;
-	}
-
-	.home, .print-hide {
-		display: none;
-	}
-
-	pride-gradient, .trans, .girl {
-		background: none !important;
-		color: var(--text-color) !important;
-	}
-
-	a {
-		color: var(--text-color) !important;
-	}
-
-
-	blockquote.chicory {
-		background-color: rgb(255, 195, 219);
-		color: rgb(221, 0, 88)
-	}
-
-	.pro {
-		outline: 1px solid;
-		padding: 0 0.5em;
-	}
-	
-}
-
 @media (max-width: 600px) {
 	header {
 		min-height: 256px;
 		padding: 5em 3em 3em;
 		background-position: calc(100% + 48px) 172px;
+	}
+
+	fieldset {
+		grid-template-columns: 14px 1fr;
+		row-gap: 0;
 	}
 }
 

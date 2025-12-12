@@ -80,8 +80,9 @@ pride-gradient[flag="plural"] {
 pride-gradient[flag], .trans {
 	background-clip: text;
 	color: transparent;
-;
 }
+
+
 
 .buttons img, .buttons {
 	image-rendering: pixelated;

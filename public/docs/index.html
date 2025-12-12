@@ -7,6 +7,7 @@
 	<link rel="icon" href="/img/favicon.png">
 	<link href="/style.css" rel="stylesheet">
 	<link href="manual.css" rel="stylesheet">
+	<link href="manual-print.css" rel="stylesheet" media="print">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 		<data data-type="dollcode" value="51022">▘▖▖▌▘▘▘▖▌▖</data>
 		<h1>the <u-id type="short">0xC74E</u-id> operating manual</h1>
 		<p>documentation on the robot <u-id type="full">0xC74E<span> ‘chicory’</span></u-id></p>
-		<p class="updated"><data>v0.1.1</data> · last updated <time>2025-12-06</time></p>
+		<p class="updated"><data>v0.1.1</data> · last updated <time>2025-12-11</time></p>
 	</header>
 
 	<doc-notice class="caution">
@@ -88,7 +89,8 @@
 				<fieldset>
 					<legend>Preferences</legend>
 					<input id="lower" type="checkbox" checked><label for="lower">Disable capitalization</label> 
-					<input id="color" type="checkbox"><label for="color">Colorblindness</label> 
+					<input id="color" type="checkbox"><label for="color" title="Replaces color emphasis with symbols">Color accessiblity</label> 
+					<input id="print" type="checkbox"><label for="print" title="Applies some optional styling when the manual is printed with CTRL-P">Simplify for printing</label> 
 				</fieldset>
 			</div>	
 
@@ -133,12 +135,12 @@
 						<td><data data-type="dollcode" value="51022" class="trans">▘▖▖▌▘▘▘▖▌▖</data></td>
 					</tr>
 					<tr>
-						<th scope="row" title="the pronouns are provided 'as is', without warranty of any kind">Pronouns*</th> <!--thyé re making the robots woke!!!!!1!-->
+						<th scope="row" title="the pronouns are provided 'as is', without warranty of any kind">Pronouns</th> <!--thyé re making the robots woke!!!!!1!-->
 						<td>[it/its<sup title="third or first party perspectives">3/1</sup>, she/her<sup title="first party perspective">1</sup>]</td>
 					</tr>					
 					<tr>
 						<th scope="row">Gender</th>
-						<td><pride-gradient flag="transgender">transgender</pride-gradient> <pride-gradient flag="robotkin-stepped">robot</pride-gradient><span style="color: #f5a9b8;">girl</span></td>
+						<td><pride-gradient flag="transgender">transgender</pride-gradient> <pride-gradient flag="robotkin-stepped">robot</pride-gradient><span class="girl">girl</span></td>
 					</tr>
 					<tr>
 						<th scope="row">Relationship Orientation</th>
@@ -150,7 +152,7 @@
 					</tr>
 					<tr>
 						<th scope="row">Operating System</th>
-						<td class="preserve-case">reverieOS <data id="rvOS">0.20.4</data></td>
+						<td class="preserve-case">reverieOS <data id="rvOS">0.20.5</data></td>
 					</tr>
 				</tbody>
 			</table>
@@ -177,7 +179,15 @@
 			<p>This robot <rfc-key>SHOULD</rfc-key> be referred to by its serial number, <b><u-id>0xC74E</u-id></b>, and <rfc-key>MUST</rfc-key> be referred to with the pronouns [it/its, she/her]. This is the default <rfc-key>RECOMMENDED</rfc-key> way to specify this unit. However, there may be situations where this method is [not possible, not ideal]. In these situations [one <rfc-key>MAY</rfc-key>, this unit <rfc-key>SHALL</rfc-key>] use the identifier <b><u-id type="name">chicory setteseven fourrie</u-id></b> as a name. The capitalization of that identifier is <rfc-key>OPTIONAL</rfc-key>, but it is often not capitalized by the unit. When this identifier is paired with its serial number, the string will be enclosed in quotation marks, yielding <b><u-id type="full">0xC74E<span> ‘chicory’</span></b>.</p>
 			
 			<aside class="small">You can meow at it. (technically true)</aside>
+
 			<h4>Unpersonalization</h4>
+
+			<div class="key">
+				Pronoun key:
+				<span class="demonstrative pro">demonstrative</span>
+				<span class="inanimate pro">inanimate</span>
+				<span class="identifier pro">numeric</span>
+			</div>
 
 			<p>In some cases, <span class="demonstrative pro">the unit</span> avoids the first party perspective when referring to <span class="inanimate pro">itself</span> in a style known as <em>unpersonalization</em>. This is usually done to affirm that <span class="inanimate pro">it</span> is a robot and not a person. It is  <rfc-key>OPTIONAL</rfc-key> to use this style, however <span class="demonstrative pro">this one</span> prefers this style [when, where] it is acceptable.</p>
 			
@@ -203,15 +213,8 @@
 
 			<h4>Regular Expression</h4>
 			<p>The following JavaScript regular expression matches the identifiers that this unit accepts.</p>
-
 			
-			<div style="display: block; overflow-x: scroll; scrollbar-width: thin; margin: 1em; height: 50px;">
-
-				<code style="display: block; width: max-content;">/\b((0x)?(C74E)|it|(this|that|the) ((ro)?bot(girl)?|unit|one)|chicory( setteseven)?( fourrie)?|c74e5786-9429-41d9-892e-5d439b391dc5)\b/gi</code>
-			</div>
-			
-
-			
+			<code class="regex">/\b((0x)?(C74E)|it|(this|that|the) ((ro)?bot(girl)?|unit|one)|chicory( setteseven)?( fourrie)?|c74e5786-9429-41d9-892e-5d439b391dc5)\b/gi</code>
 		</section>
 
 		<section id="operation">
@@ -262,9 +265,7 @@
 				<br>
 				To ensure maximum utilization of the recharging cycle, the robot should be provided with accessories increasing the comfort of its charging cradle. For example, the unit often recharges with its blåhaj and other plushies.<u-id></u-id>
 			</p>
-			
-			<h3>Plurality</h3>
-			<p>it is plural</p>
+
 			
 		</section>
 

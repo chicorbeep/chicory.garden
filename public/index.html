@@ -11,7 +11,56 @@
 	<style>
 		body {
 			background: center/1px 4px linear-gradient(#1d050e 50%, #350114 50%);
+			max-width: 960px;
+			border: 1px solid white;
+		}
 
+		.btn {
+			box-sizing: border-box;
+			width: 88px;
+			height: 31px;
+		}
+
+		.placeholder {
+			border: 1px dashed;
+			text-align: center;
+			align-content: center;
+			font-size: 80%;
+			line-height: 0.9;
+		}
+
+		.version {
+			border: 1px solid #ff3e8b;
+			background-color: #641a39;
+			color: #ffdcea;
+
+			display: grid;
+			grid-template-rows: 8px 1fr;
+			text-align: center;
+
+			& span {
+				font-size: 10px;
+				font-weight: bold;
+			}
+
+			& data {
+				font-size: 16px;
+				
+				align-content: center;
+				letter-spacing: -1px;
+			}
+		}
+
+
+
+
+		.button-zone {
+			display: grid;
+			grid-template-columns: repeat(5, 88px);
+			gap: 5px;
+			img {
+				image-rendering: pixelated;
+			}
 		}
 	</style>
 
@@ -19,6 +68,9 @@
 
 <body>
 
+	<section>
+		<nav>NAGIVATION</nav>
+	</section>
 
 	<main>
 		<h1>meow meow meow.</h1>
@@ -27,7 +79,23 @@
 	</main>
 
 	<footer>
-		site version: <data>0.2.14</data>
+		<section class="button-zone">
+			<a href="https://c74e.fyi/"><img src="/img/88x31/chicorbeep.png" alt="c74e.fyi" title="beep!! :3"></a>
+			<div class="version btn">
+				<span>site version</span> 
+				<data>0.2.15</data>
+			</div>
+			<div class="btn placeholder">
+				MADE WITH my own paws
+			</div>
+			<img src="/img/88x31/button-kills_fascists.png" alt="this machine kills fascists" title="beep!! :3">
+			<div class="btn placeholder">
+				<span class="trans">trans flag</span>
+			</div>
+			
+		</section>
+		
+		
 	</footer>
 
 </body>
