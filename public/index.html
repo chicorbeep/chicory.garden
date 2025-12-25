@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>the beepiest ever</title>
-		<link rel="icon" href="/img/favicon.png">
-		<link href="/style.css" rel="stylesheet">
-		<style>
 
-			body {
-				background-color: #1d050e;
-				text-align: center;
-				margin: 0;
-				max-width: 100vw;
-				
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>beep boop!</title>
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href="/style.css" rel="stylesheet" type="text/css" media="all" title="Default">
+
+	<style>
+		.btn.version {
+			border: 1px solid #ff3e8b;
+			background-color: #641a39;
+			color: #ffdcea;
+
+			display: grid;
+			grid-template-rows: 8px 1fr;
+
+			text-align: center;
+
+			& span {
+				font-size: 10px;
+				font-weight: bold;
 			}
 
-			.light {
-				color: #c98ea4;
-				font-style: italic;
-				font-size: smaller;
+			& data {
+				font-size: 16px;
+				align-content: center;
+				letter-spacing: -1px;
 			}
+		}
+	</style>
 
-			.title {
-				background-color: #3c071b;
-				max-width: 60em;
-				margin: 100px auto;
-				padding: 32px;
-				box-shadow: 0 0 50px #3c071b;
-			}
+</head>
 
+<body>
 
-			.spinit {
-				image-rendering: pixelated; 
-			}
+	<section class="nav-banner">
+		<nav>
+			<a class="breadcrumb" href="/">root</a>
+			<a href="/about.html">about</a>
+			<a href="/art.html">art</a>
+			<a href="https://chicorbeep.atabook.org">guestbook</a>
+			<a href="/not_found.html">mysterious option</a>
+		</nav>
+	</section>
 
-		</style>
-	</head>
+	<main>
+		<hgroup>
+			<h1>welcome to c74e.fyi!</h1>
+			<p>it hopes you enjoy your stay! :3</p>
+		</hgroup>
 
-	<body>
+		<img src="/assets/img/webbedsight.png" style="margin: auto; display: block;"
+			alt="under construction! below, a construction barrier brandished 'webbedsight', and a crudely drawn chicory holding a hammer. there is text pointing to chicory stating 'doesn't know what it's getting into">
 
+	</main>
 
+	<footer>
+		<section class="left">
+			<p>made with ❤ 2024 – 2026</p>
+			<a href="/sitemap.html">sitemap</a> · <a href="/colophon.html">colophon</a>
+		</section>
 
-		<div class="title">
-			
-			<h1>it will be the c74e <abbr title="for yearning information">fyi</abbr> of the century</h1>
-			
-			<img class="spinit" src="/img/profile.png" alt="c74e looks at the reader" title="beep!">
-			
+		<section class="buttons">
+			<a href="https://c74e.fyi/"><img src="/assets/img/88x31/chicorbeep.png" alt="c74e.fyi"
+					title="beep!! :3"></a>
+			<img src="/assets/img/88x31/button-kills_fascists.png" alt="this machine kills fascists">
+			<img src="/assets/img/88x31/trans.png" alt="transgender pride flag" title="TRANS RIGHTS!!!">
 
-			<div class="buttons">
-				<a href="https://c74e.fyi/"><img src="/img/88x31/chicorbeep.png" alt="c74e.fyi" title="beep!! :3"></a>
-			  <!--<a href="https://endoftimee.tech/"><img src="/img/88x31/endoftimee.gif" alt="endoftimee" title="they are very cool! :3"></a>-->  
-				<a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button3.gif" alt="on a black field, red segmented letters spell out nekoweb, with a rotating slash in the bottom left corner. the right depicts a cat face, in a segmented design."></a>
-			</div>
+			<div class="version btn"><span>site version</span><data>0.3.3</data></div>
+			<div class="btn placeholder">MADE WITH my own paws</div>
+			<div class="btn placeholder">resolution: 960x540+</div>
+		</section>
 
-			<p class="light">want to beep at the robot? send precious electronic mail to <code>beep[at]c74e.fyi</code>! please be kind, and beep responsibly.</p>
-	
-			<a href="/not_found.html">this is a link, it doesn't go anywhere.</a>
-	
-		</div>
+	</footer>
 
-		<p class="light">meowwwwww :3 site version: <data>0.2.6</data></p>
-
-	</body>
-
+</body>
 
 </html>

@@ -62,7 +62,7 @@ html {
 body {
 	background: #270010;
 	text-align: center;
-	font-size: 26px;
+	font-size: 24px;
 	position: absolute;
 	inset: 0;
 	margin: 0;
@@ -82,20 +82,20 @@ body {
 }
 
 .bg {
-	background: url(/img/prophecy.png);
+	background: url(/assets/img/prophecy.png);
 	animation: background-scroll 20s linear 0s infinite;
 	filter:  contrast(0.5) brightness(0.3) saturate(2) ;
 	z-index: -10;
 }
 
 .vignette {
-	height: 50vh;
+	height: 40vh;
 	width: 200vw;
 	background: transparent;
 	outline: 1000px solid black;
-	border-radius: 1000px;
-	filter: blur(70px);
+	filter: blur(100px);
 	z-index: -9;
+	margin-bottom: 10vh;
 }
 
 .pr-text {
@@ -103,12 +103,12 @@ body {
 	font-size: 1.6em;
 	text-transform: lowercase;
 	font-family: "Atkinson Hyperlegible Mono", monospace;
-	animation: 
-		background-scroll 10s linear 0s infinite;
-	background: url(/img/prophecy.png);
+	animation: background-scroll 10s linear 0s infinite;
+	background: url(/assets/img/prophecy.png);
 	filter: brightness(2);
 	background-clip: text;
 	color: transparent;
+	width: 20em;
 }
 
 .pr404 {
@@ -123,7 +123,7 @@ body {
 	&::before {
 		content: "404";
 		margin: auto;
-		background: url(/img/prophecy.png);
+		background: url(/assets/img/prophecy.png);
 		background-clip: text;
 		color: #0000;
 		animation: 
@@ -138,7 +138,7 @@ body {
 		inset: -10px;
 		
 		z-index: -2;
-		background: url(/img/prophecy.png);
+		background: url(/assets/img/prophecy.png);
 		background-clip: text;
 		animation: 
 			prophecy-shadows 3s ease-in-out 0s infinite,
@@ -157,32 +157,30 @@ article {
 	user-select: none;
 }
 
-a {
-	color: #FF9999;
-}
-
-a:visited {
-	color: #ff99cc;
-}
-
-a:focus, a:hover {
-	color: #FF3333;
-}
-
-a:active {
-	color: #ffbc40;
-}
-
 .music {
 	position: absolute;
 	bottom: 1em;
-
+	display: flex;
+	flex-direction: column-reverse;
+	& p {
+		font-size: 16px;
+		margin: 0;
+		line-height: 1.5;
+	}
+ 
 	& audio {
 		box-shadow: none;
 		--media-background: transparent;
 		width: min(90vw, 500px);
+		opacity: 0.3;
+		transition: 400ms;
+		&:hover {
+			opacity: 1;
+		}
 	}
+
 }
+
 
 @media (max-width: 900px) {
 	body {
@@ -197,7 +195,9 @@ a:active {
 	}
 
 	.music {
+		flex-direction: column;
 		top: 1em;
+		bottom: unset;
 	}
 
 }

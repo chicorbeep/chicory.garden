@@ -1,0 +1,98 @@
+:root:has(#print:checked) {
+    --background: #ffffff;
+    --text-color: #000000;
+    --accent-pri: #b40054;
+    --accent-sec: rgb(148, 15, 0);
+    --accent-tri: #7a5e00;
+    --table-light: #ddd;
+    --text-light: #444444;
+}
+
+.print-hide {
+    display: none;
+}
+
+*:not(img)[title] {
+    text-decoration: none;
+
+    &::after {
+        content: " (" attr(title) ") ";
+        font-size: 70%;
+        baseline-shift: -2px;
+        letter-spacing: -1px;
+    }
+}
+
+body:has(#print:checked) {
+
+    & pride-gradient,
+    & .trans,
+    & .girl {
+        background: none !important;
+        color: var(--text-color) !important;
+    }
+
+    & a {
+        color: var(--text-color) !important;
+
+        &[href=""]::after {
+            /* TODO: Figure out the proper syntax for external links only */
+            content: "[" attr(href) "]";
+            font-size: 70%;
+            baseline-shift: -2px;
+        }
+    }
+
+
+    & blockquote.chicory {
+        background-color: rgb(255, 195, 219);
+        color: rgb(221, 0, 88)
+    }
+
+    & .pro {
+        outline: 1px solid;
+        padding: 0 0.5em;
+    }
+
+    & nav>details>summary>h2::before {
+        content: "#";
+    }
+
+    & header {
+        background: url(/assets/img/emblem_clean.svg) no-repeat calc(100% + 48px) 72px/256px #ffffff;
+        padding: 0;
+        height: 100%;
+
+        display: block;
+        width: 100%;
+        position: relative;
+        break-after: page;
+        page: cover;
+
+        &>h1 {
+            line-height: 0.75;
+            margin: 0;
+        }
+
+        &>p {
+            margin: 4px 0 0;
+        }
+
+        &>data[data-type="dollcode"] {
+            color: var(--accent-sec);
+            position: absolute;
+            right: 3em;
+            top: 2em;
+            font-size: 16px;
+            font-family: monospace;
+            padding: 3px 6px;
+        }
+
+        &>.updated {
+            font-weight: bold;
+            color: var(--accent-sec);
+        }
+    }
+
+    @page cover {}
+}

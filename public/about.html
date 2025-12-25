@@ -1,104 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title></title>
-		<link rel="icon" href="/img/favicon.png">
-		<link href="/style.css" rel="stylesheet" type="text/css" media="all" title="Default">
-		<style>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href="/style.css" rel="stylesheet" type="text/css" media="all" title="Default">
+	<style>
 
-            #listening {
-                background-color: #320303;
-                padding: 8px 8px 8px 80px;
-                position: relative;
-                min-height: 64px;
-                max-width: 320px;
-            }
+	.about-window {
+		border: 1px solid;
+		padding: 8px;
+		position: relative;
+		display: flow-root;
+		max-width: 640px;
+		margin: 16px 0 0 auto;
+		background: rgb(25, 16, 27);
+		z-index: 0;
+	}
 
-            #listening h3 {
-                margin: 0;
-                line-height: 0.9;
-            }
-            
-            #listening p {
-                margin: 0;
-            }
+		.titlebar {
+		background-color: white;
+		margin: -8px -8px 8px;
+		padding: 4px 8px;
+		height: 24px;
 
-            #listening img {
-                position: absolute;
-                top: 8px;
-                left: 8px;
-            }
+		color: #320303;
+	}
+
+	.titlebar span {
+		vertical-align: 15%;
+		padding-left: 4px;
+	}
+
+	.about-window > .chicory {
+		float: left;
+		image-rendering: pixelated;
+		margin: -8px -8px -24px -8px;
+
+	}
+
+	.bg {
+		position: absolute;
+		z-index: -1;
+		height: 300px;
+		width: 200px;
+		background-color: rgb(226, 142, 142);
+		margin: -8px;
+	}
+
+	.about-window  :is(h2, p) {
+		margin: 0;
+		padding: 0;
+	}
+
+	.version {
+		vertical-align: 0%;
+		font-size: 70%;
+		font-variant-numeric: tabular-nums;
+	}
 
 
 
-		</style>
-
-        <noscript>
-            <style>
-                #listening, #listening-msg {
-                    display: none;
-                }
-            </style>
-        </noscript>
-	</head>
-
-	<body>
 
 
 
-	
-			<h1>about</h1>
+
+
+
+
+	#listening {
+		background-color: #320303;
+		padding: 8px 8px 8px 80px;
+		position: relative;
+		min-height: 64px;
+		max-width: 320px;
+	}
+
+	#listening h3 {
+		margin: 0;
+		line-height: 0.9;
+	}
+
+	#listening p {
+		margin: 0;
+	}
+
+	#listening img {
+		position: absolute;
+		top: 8px;
+		left: 8px;
+	}
+
+	.friends img {
+		height: 62px;
+		image-rendering: pixelated;
+	}
+
+	</style>
+
+	<noscript><style>
+
+	#listening, #listening-msg {
+		display: none;
+	}
+
+	</style></noscript>
+</head>
+
+<body>
+	<div class="nav-banner">
+		<nav>
+			<a class="breadcrumb" href="/">root</a>
+			<a class="breadcrumb" href="/about.html">about</a>
 			
-            <p>It's a girl of some sort</p>
+			<a href="/docs/index.html">user manual</a>
+		</nav>
+	</div>
+
+	<main>
+		<h1>about the unit</h1>
+
+	<section class="about-window">
+		<div class="titlebar">
+			<img src="/assets/img/favicon.png" height="16">
+			<span>about 0xC74E</span> 
+		</div>
+		<div class="bg"></div>
+		<img class="chicory" src="/assets/img/art/suwi.png" alt="chicory! it's smiling while standing behind this window's frame" width="225" height="316">
+
+		
+		<hgroup>
+			<h2><u-id>0xC74E</u-id> ‘chicory’ <span class="version">version 0.1.1</span></h2>
+			<p>awawawawawawawa!</p>
+		</hgroup>
+		<hr>
+		<p>beep! this one's name is chicory. it is a very friendly robot that will awawa.</p>
+		<br>
+		<p>here are some interesting things about this one</p>
+
+		<ul>
+			<li>it's <pride-gradient flag="transgender">trans</pride-gradient> because :3</li>
+			<li>it is a <pride-gradient flag="robotkin-stepped">robot</pride-gradient>!</li>
+
+		</ul>
+		<small>do not the chicory.</small>
+
+	</section>
+
+	<section> 
+		there are a lot of things this unit enjoys
+		<ul>
+			<li>beeping</li>
+			<li>talking to friends</li>
+			<li>being really silly and carefree :3</li>
+			<li>having fun tinkering with computers</li>
+			<li>listening to tracker music</li>
+			<li>
+				conlangs, especially <span lang="tok">toki pona</span>
+			</li>
+			<li>drawing digital art</li>
+			<li>ten words of wisdom competitions</li>
+		</ul>
+		and probably a lot more! beep!!!!!!!
+	</section>
 
 
-            <h3 id="listening-msg"></h3>
-            <div id="listening"></div>
+	<h3 id="listening-msg"></h3>
+	<div id="listening"></div>
 
-            <script>
-                // this script is under the MIT license (https://max.nekoweb.org/resources/license.txt)
+	<a href="https://swiftyshq.neocities.org/fun/quiz/eon"><img src="https://swiftyshq.neocities.org/img/quiz/eon/vee8.png" alt="sylveon" title="timid and extroverted, your unpredictable and anxious nature gives you a sense of humor"></a>
 
-                const USERNAME = "c74e"; // Put your LastFM username here
-                const BASE_URL = `https://lastfm-last-played.biancarosa.com.br/${USERNAME}/latest-song`;
+	<script src="/assets/js/lastfm.js"></script>
 
-                const getTrack = async () => {
-                    const request = await fetch(BASE_URL);
-                    const json = await request.json();
-                    let status
+	<section>
+		<h2>88×31 zone</h2>
 
-                    let isPlaying = json.track['@attr']?.nowplaying || false;
+		<div class="friends"><a href="https://endoftimee.tech/"><img src="/assets/img/88x31/endoftimee.gif" alt="endoftimee" title="they are very cool! :3"></a></div>
+		
+		<!--TODO: Find more-->
+	</section>
 
-                    if(!isPlaying) {
+	</main>
 
-                        document.getElementById("listening-msg").innerText = "Last played";
-                        document.getElementById("listening").innerHTML = `
-                        <img src="${json.track.image[1]['#text']}">
-                        <div id="trackInfo">
-                        <h3 id="trackName">${json.track.name}</h3>
-                        <p id="artistName">${json.track.artist['#text']}</p>
-                        </div>
-                        `
-                        return;
-                    } else {
-                        // Trigger if a song is playing
-                    }
+	<footer>
+		<section class="left">
+			<p>made with ❤ 2024 – 2026</p>
+			<a href="/sitemap.html">sitemap</a> · <a href="/colophon.html">colophon</a>
+		</section>
 
-                    document.getElementById("listening-msg").innerText = "Currently playing";
-                    document.getElementById("listening").innerHTML = `
-                    <img src="${json.track.image[1]['#text']}">
-                    <div id="trackInfo">
-                    <h3 id="trackName">${json.track.name}</h3>
-                    <p id="artistName">${json.track.artist['#text']}</p>
-                    </div>
-                    `
-                };
+		<section class="buttons">
+			<a href="https://c74e.fyi/"><img src="/assets/img/88x31/chicorbeep.png" alt="c74e.fyi" title="beep!! :3"></a>
+			<img src="/assets/img/88x31/button-kills_fascists.png" alt="this machine kills fascists">
+			<img src="/assets/img/88x31/trans.png" alt="transgender pride flag" title="TRANS RIGHTS!!!">
+		</section>
 
-                getTrack();
-                setInterval(() => { getTrack(); }, 30000);
-                </script>
-	</body>
-
+	</footer>
+</body>
 
 </html>
