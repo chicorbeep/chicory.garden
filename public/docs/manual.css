@@ -396,7 +396,8 @@ table {
 }
 
 #datasheet tr th {
-	width: 16em;
+ 	width: 16em;
+
 }
 
 
@@ -408,8 +409,9 @@ code {
 
 
 rfc-key {
-	font-feature-settings: "smcp";
-	text-decoration: underline;
+	font-synthesis: small-caps;
+	font-variant: small-caps;
+
 	font-weight: 500;
 }
 
