@@ -31,6 +31,137 @@
 	}
 
 
+	pre {
+		text-align: left;
+		background-color: black;
+		color: white;
+	
+		font-size: 13px;
+			padding: 2ch;
+			width: 80ch;
+		line-height: 1;
+		font-family: "Cozette", "CozetteVector", monospace;
+				&::selection {
+				background-color: white;
+				color: black;
+			}
+
+
+		& .c0 {
+			color: #d74581;
+
+			&::selection {
+				background-color: #d74581;
+				color: black;
+			}
+		}
+
+		& .c1 {
+			color: #92335a;
+			
+			&::selection {
+				background-color: #92335a;
+				color: black;
+			}
+		}
+
+		& .c2 {
+			color: #fa7f72;
+			
+			&::selection {
+				background-color: #fa7f72;
+				color: black;
+			}
+		}
+
+		& .a0 {
+			color: salmon;
+			
+			&::selection {
+				background-color: salmon;
+				color: black;
+			}
+		}
+
+
+		& .t0 {
+			color: #5bcefa;
+			
+			&::selection {
+				background-color: #5bcefa;
+				color: black;
+			}
+		}
+
+		& .t1 {
+			color: #f5a9b8;
+			
+			&::selection {
+				background-color: #f5a9b8;
+				color: black;
+			}
+		}
+
+		& .t2 {
+			color: #fff;
+			
+			&::selection {
+				background-color: #fff;
+				color: black;
+			}
+		}
+
+	}
+
+	@property --amplitude {
+		syntax: "<length>";
+		initial-value: 0px;
+	}
+
+	@keyframes wavy {
+
+		0%	{transform: translateY(0px);}
+		50%	{transform: translateY(var(--amplitude));} 
+		100% {transform: translateY(0px);}
+		
+	}
+
+	.wavy {
+		font-family: "League Mono";
+		text-align: left;
+		font-stretch: 100%;
+		letter-spacing: -2px;
+		padding-top: 20px;
+		font-size: 2em;
+		transition: 12s;
+		--amplitude: -5px;
+		& span {
+			display: inline-block;
+
+			--timing: 1s;
+
+			animation: wavy var(--timing) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+			
+			&:nth-child(10n+1) {animation-delay: calc(-9 * var(--timing) / 10);}
+			&:nth-child(10n+2) {animation-delay: calc(-8 * var(--timing) / 10);}
+			&:nth-child(10n+3) {animation-delay: calc(-7 * var(--timing) / 10);}
+			&:nth-child(10n+4) {animation-delay: calc(-6 * var(--timing) / 10);}
+			&:nth-child(10n+5) {animation-delay: calc(-5 * var(--timing) / 10);}
+			&:nth-child(10n+6) {animation-delay: calc(-4 * var(--timing) / 10);}
+			&:nth-child(10n+7) {animation-delay: calc(-3 * var(--timing) / 10);}
+			&:nth-child(10n+8) {animation-delay: calc(-2 * var(--timing) / 10);}
+			&:nth-child(10n+9) {animation-delay: calc(-1 * var(--timing) / 10);}
+		}
+		&:hover {
+			
+			--amplitude: -100px;
+
+		}
+	}
+
+
+	
+
 	.spinit {
 		image-rendering: pixelated; 
 	}
@@ -42,7 +173,7 @@
 
 	<div class="title">
 		
-		<h1>it will be the c74e <abbr title="for yearning information">fyi</abbr> of the century</h1>
+		<h1>welcome to the test page</h1>
 		
 		<img class="spinit" src="/assets/img/profile.png" alt="c74e looks at the reader" title="beep!">
 		
@@ -55,8 +186,26 @@
 			<a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button3.gif" alt="on a black field, red segmented letters spell out nekoweb, with a rotating slash in the bottom left corner. the right depicts a cat face, in a segmented design."></a>
 		</div>
 
-
+<pre>
+<span class="c0">         .           </span><span class="a0">chicory</span>@<span class="a0">c74e</span>
+<span class="c0">        dMb          </span>------------
+<span class="c0">      dMMM""</span><span class="c1">,='')    </span><span class="a0">OS</span>: reverieOS 0.21.0
+<span class="c0">    dMM" </span><span class="c1">,=b</span><span class="c0">MMb</span><span class="c1">,'    </span><span class="a0">Host</span>: 0xC74E ‘chicory’
+<span class="c0">  dMM"</span><span class="c2">.</span><span class="c1">,'</span><span class="c0">MMMMMMMb    </span><span class="a0">Uptime</span>: 17 years, 9 months (!)
+<span class="c0">dMM" </span><span class="c2">{@} </span><span class="c0">MMMMMMMMMb  </span><span class="a0">Packages</span>: 10
+<span class="c0"> "" </span><span class="c1">.'</span><span class="c2">"  </span><span class="c0">MMMMMMMM"   </span><span class="a0">Locale</span>: en_US, es_MX, fr_FR, tok
+<span class="c0">   </span><span class="c1">I</span><span class="c0">MMb  MMMMMM"     </span><span class="a0">Pronouns</span>: it/its (3pp), she/her
+<span class="c0">  </span><span class="c1">(  </span><span class="c0">"MMbMMMM"       </span>
+<span class="c0">  </span><span class="c1">`==' </span><span class="c0">"MMM"         </span>beep boop! :3c         <span class="t0">▘▖</span><span class="t1">▖▌</span><span class="t2">▘▘</span><span class="t1">▘▖</span><span class="t0">▌▖</span>
+<span class="c0">         "           </span>
+</pre><!--The horrors of doing this manually :‹-->
 		
+
+
+<p class="wavy"><span>c</span><span>7</span><span>4</span><span>e</span><span>5</span><span>7</span><span>8</span><span>6</span><span>-</span><span>9</span><span>4</span><span>2</span><span>9</span><span>-</span><span>4</span><span>1</span><span>d</span><span>9</span><span>-</span><span>8</span><span>9</span><span>2</span><span>e</span><span>-</span><span>5</span><span>d</span><span>4</span><span>3</span><span>9</span><span>b</span><span>3</span><span>9</span><span>1</span><span>d</span><span>c</span><span>5</span></p>
+
+
+<p?
 		<p class="light">want to beep at the robot? send precious electronic mail to <code>beep[at]c74e.fyi</code>! please be kind, and beep responsibly.</p>
 
 		<a href="/sitemap.html">EVIL SITEMAP LINK</a>

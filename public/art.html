@@ -8,25 +8,36 @@
 	<link href="/style.css" rel="stylesheet" type="text/css" media="all" title="Default">
 
 	<style>
-		figure {
-			border: 1px solid;
-			width: max-content;
-			margin: 16px auto;
-			padding: 4px;
 
-			& img {
-				image-rendering: pixelated;
-			}
+		section.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
 
-			& figcaption {
-				font-weight: bold;
+			& figure {
+				border: 1px solid #b06;
+				width: max-content;
+				display: block;
+				margin: auto;
+				padding: 4px;
+				height: fit-content;
+				background-color: #402;
 
-				& time {
-					font-weight: normal;
-					font-size: 80%;
+				& img {
+					image-rendering: pixelated;
+				}
+
+				& figcaption {
+					font-weight: bold;
+					text-align: center;
+
+					& time {
+						font-weight: normal;
+						font-size: 80%;
+					}
 				}
 			}
-		}
+	}
 	</style>
 <body>
 	<section class="nav-banner">
@@ -44,11 +55,23 @@
 		</hgroup>
 		<p>sometimes this unit draws. here are some selected works it feels comfortable broadcasting.</p>
 	
+
+		<section class="gallery">
+		<figure>
+			<img src="/assets/img/art/christmas_tree_not_borked.png">
+			<figcaption>happy holidays! <time>2025-12-24</time></figcaption>
+		</figure>
+		
+
 		<figure>
 			<img src="/assets/img/manual/chicory_pfp.png">
 			<figcaption>current pfp <time>2025-11-19</time></figcaption>
 		</figure>
 		
+		<figure>
+			<img src="/assets/img/art/scrunkly.png">
+			<figcaption>the scrunkly chicory <time>2025-10-23</time></figcaption>
+		</figure>
 		
 		
 		<figure>
@@ -62,7 +85,7 @@
 			<figcaption>the eepy beepy <time>2025-08-21</time></figcaption>
 		</figure>
 
-		
+		</section>
 	
 	
 	
