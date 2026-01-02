@@ -1,11 +1,22 @@
 :root {
-	--background: #272338;
+	--background: #212;
 	--text-color: #fff;
-	--accent-pri: #ff8ec2;
+	--accent-pri: #faf;
 	--accent-sec: salmon;
 	--accent-tri: #f5cc44;
 	--table-light: oklch(from var(--background) calc(l + 0.2) c h);
 	--text-light: color-mix(in oklch, var(--text-color) 80%, var(--background) 20%);
+}
+
+@keyframes waves {
+	0% {
+		background-position: 0 100%;
+	}
+
+	100% {
+		background-position: 360px 100%;
+	}
+	
 }
 
 
@@ -13,9 +24,9 @@ body {
 	background: var(--background);
 	color: var(--text-color);
 	line-height: 1.7;
-	max-width: calc(960px);
+	
 	margin: auto;
-	padding: 0 2em;
+
 	font-family: "Atkinson Hyperlegible Next", sans-serif;
 
 	&:has(#lower:checked) {
@@ -69,10 +80,15 @@ body {
 	}
 }
 
-.nav-banner {
-	max-width: 960px;
-	width: unset;
-	margin: 4px 0 1em;
+.margin {
+	padding: 0 2em;
+	max-width: 720px;
+	margin: auto;
+
+	&:is(doc-notice) {
+		padding: 1em;
+		margin: 1em max(calc((100dvw - 720px) / 2), 3em);
+	}
 }
 
 main {
@@ -163,12 +179,18 @@ h4 {
 
 
 header {
-	background: url(/assets/img/emblem_clean.svg) no-repeat calc(100% + 48px) 72px/256px #3c071b;
-	padding: 4em 3em 3em;
-	min-height: 128px;
+	background: url(/assets/img/manual/waves.svg) repeat-x  #3f1c33;
+	background-position: 0 100%;
+	background-size: 360px;
+	padding: 4em max(calc((100dvw - 720px)/ 2), 3em) 0;
+	min-height: 256px;
+	box-sizing: border-box;
 	position: relative;
+	text-align: center;
 	break-after: page;
-
+	font-size: 18px;
+	animation: waves 20s linear infinite;
+	animation-play-state: paused;
 	&>h1 {
 		line-height: 0.75;
 		margin: 0;
@@ -179,17 +201,25 @@ header {
 	}
 
 	&>data[data-type="dollcode"] {
-		color: var(--accent-sec);
+		color: var(--accent-pri);
 		position: absolute;
-		right: 3em;
-		top: 2em;
+		right: max(calc((100dvw - 720px)/ 2), 3em);
+		top: 1em;
 		font-size: 16px;
 		font-family: monospace;
 		padding: 3px 6px;
 	}
 	&>.updated {
 		font-weight: bold;
-		color: var(--accent-sec);
+		color: var(--accent-pri);
+	}
+
+	&:hover {
+		animation-play-state: running;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
 	}
 }
 
@@ -512,9 +542,9 @@ footer {
 
 @media (max-width: 600px) {
 	header {
-		min-height: 256px;
-		padding: 5em 3em 3em;
-		background-position: calc(100% + 48px) 172px;
+
+		font-size: 16px;
+
 	}
 
 	fieldset {

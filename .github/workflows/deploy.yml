@@ -22,6 +22,6 @@ jobs:
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-domain: 'c74e.fyi'
+          nekoweb-domain: 'fourrie.net'
           nekoweb-username: 'chicorbeep'
           directory: 'public'

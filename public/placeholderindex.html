@@ -120,9 +120,9 @@
 
 	@keyframes wavy {
 
-		0%	{transform: translateY(0px);}
+		0%	{transform: translateY(calc(-1 * var(--amplitude)));}
 		50%	{transform: translateY(var(--amplitude));} 
-		100% {transform: translateY(0px);}
+		100% {transform: translateY(calc(-1 * var(--amplitude)));}
 		
 	}
 
@@ -131,10 +131,9 @@
 		text-align: left;
 		font-stretch: 100%;
 		letter-spacing: -2px;
-		padding-top: 20px;
+		padding-top: 30px;
 		font-size: 2em;
-		transition: 12s;
-		--amplitude: -5px;
+		--amplitude: 5px;
 		& span {
 			display: inline-block;
 
@@ -154,9 +153,20 @@
 		}
 		&:hover {
 			
-			--amplitude: -100px;
-
+			--amplitude: 30px;
+			font-stretch: 50%;
 		}
+	}
+
+	.uuid {
+		font-family: "League Mono";
+
+		font-synthesis: weight;
+		transition: 600ms;
+		&:hover {
+			font-weight: 800;
+		}
+
 	}
 
 
@@ -181,7 +191,7 @@
 
 
 		<div class="buttons">
-			<a href="https://c74e.fyi/"><img src="/assets/img/88x31/chicorbeep.png" alt="c74e.fyi" title="beep!! :3"></a>
+			<a href="https://fourrie.net/"><img src="/assets/img/88x31/chicorbeep.png" alt="fourrie.net" title="beep!! :3"></a>
 			
 			<a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button3.gif" alt="on a black field, red segmented letters spell out nekoweb, with a rotating slash in the bottom left corner. the right depicts a cat face, in a segmented design."></a>
 		</div>
@@ -204,9 +214,9 @@
 
 <p class="wavy"><span>c</span><span>7</span><span>4</span><span>e</span><span>5</span><span>7</span><span>8</span><span>6</span><span>-</span><span>9</span><span>4</span><span>2</span><span>9</span><span>-</span><span>4</span><span>1</span><span>d</span><span>9</span><span>-</span><span>8</span><span>9</span><span>2</span><span>e</span><span>-</span><span>5</span><span>d</span><span>4</span><span>3</span><span>9</span><span>b</span><span>3</span><span>9</span><span>1</span><span>d</span><span>c</span><span>5</span></p>
 
+<p class="uuid">c74e5786-9429-41d9-892e-5d439b391dc5</p>
 
-<p?
-		<p class="light">want to beep at the robot? send precious electronic mail to <code>beep[at]c74e.fyi</code>! please be kind, and beep responsibly.</p>
+		<p class="light">want to beep at the robot? send precious electronic mail to <code>beep[at]fourrie.net</code>! please be kind, and beep responsibly.</p>
 
 		<a href="/sitemap.html">EVIL SITEMAP LINK</a>
 
