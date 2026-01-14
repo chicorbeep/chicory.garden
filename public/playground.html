@@ -137,7 +137,7 @@ h1, p {
 		text-align: left;
 		font-stretch: 100%;
 		letter-spacing: -2px;
-		padding-top: 30px;
+		padding: 60px 0;
 		font-size: 2em;
 		--amplitude: 5px;
 		& span {
@@ -169,19 +169,49 @@ h1, p {
 			
 			--amplitude: 30px;
 			font-stretch: 50%;
-			padding: 60px;
+			padding: 60px 0;
 		}
 	}
 
-	.uuid {
-		font-family: "League Mono";
 
-		font-synthesis: weight;
-		transition: 600ms;
-		&:hover {
-			font-weight: 800;
+	.clock {
+		background-color: #1b0329;
+		text-align: center;
+
+		color: #d48bff;
+
+		width: max-content;
+		padding: 4px 0;
+
+		& > #clock {
+			font-family: "Decasev", monospace;
+			font-size: 24px;
+
+			background-color: #0c0013;
+			color: #e7bdff;
+			margin: auto;
+			display: block;
+			width: 8ch;
+			padding: 1ch 3ch;
+			margin: 4px 0;
+			
+			&::before {
+				content: "28:88:88";
+				position: absolute;
+				color: #5c3274;
+				z-index: 0;
+				mix-blend-mode: lighten;
+			}
+
+			&::after {
+				content: "";
+				font-size: 12px;
+				position: absolute;
+
+				z-index: 0;
+				mix-blend-mode: lighten;
+			}
 		}
-
 	}
 
 .chicory::after {
@@ -235,7 +265,12 @@ h1, p {
 
 <p class="wavy"><span>c</span><span>7</span><span>4</span><span>e</span><span>5</span><span>7</span><span>8</span><span>6</span><span>-</span><span>9</span><span>4</span><span>2</span><span>9</span><span>-</span><span>4</span><span>1</span><span>d</span><span>9</span><span>-</span><span>8</span><span>9</span><span>2</span><span>e</span><span>-</span><span>5</span><span>d</span><span>4</span><span>3</span><span>9</span><span>b</span><span>3</span><span>9</span><span>1</span><span>d</span><span>c</span><span>5</span></p>
 
-<p class="uuid">c74e5786-9429-41d9-892e-5d439b391dc5</p>
+	<article class="clock">
+		<p>currently, it is</p>
+		<span id="clock" title="UTC-7">--:--:--</span>
+		for the chicory
+	</article>
+
 
 	<a href="/sitemap.html">EVIL SITEMAP LINK</a>
 	
@@ -244,7 +279,27 @@ h1, p {
 
 	</div>
 
-	
+	<script>
+		"use strict";
+
+		function updateClock() {
+			let date = new Date();
+			let dateOffset = new Date(
+				date.getFullYear(),
+				date.getMonth(),
+				date.getDate(),
+				date.getHours() - 7,
+				date.getMinutes(),
+				date.getSeconds(),
+			);
+			let timeString = dateOffset.toISOString()
+			document.getElementById("clock").innerText = timeString.slice(11,19);
+						
+		}
+
+		setInterval(updateClock, 1000);
+		updateClock();
+	</script>
 </body>
 
 </html>
