@@ -1,0 +1,267 @@
+@font-face {
+	font-family: Decasev;
+	src: url(/assets/fonts/Decasev.ttf);
+}
+
+.light {
+	color: #c98ea4;
+	font-style: italic;
+	font-size: smaller;
+}
+
+.title {
+	background-color: #3c071b;
+	max-width: 60em;
+	margin: 100px auto;
+	padding: 32px;
+	box-shadow: 0 0 50px #3c071b;
+}
+
+
+h1, p {
+	margin: 0em 0;
+}
+
+.terminal {
+	text-align: left;
+	background-color: black;
+	border: 2px solid gray;
+	border-top-width: 18px;
+	color: white;
+
+
+	&::before {
+		content: awawa;
+		color: red;
+	}
+
+
+	font-size: 13px;
+	padding: 2ch;
+	width: 80ch;
+	line-height: 1;
+	font-family: "Cozette", "CozetteVector", monospace;
+	
+	&::selection {
+		background-color: white;
+		color: black;
+	}
+
+
+	& .c0 {
+		color: #d74581;
+
+		&::selection {
+			background-color: #d74581;
+			color: black;
+		}
+	}
+
+	& .c1 {
+		color: #92335a;
+		
+		&::selection {
+			background-color: #92335a;
+			color: black;
+		}
+	}
+
+	& .c2 {
+		color: #fa7f72;
+		
+		&::selection {
+			background-color: #fa7f72;
+			color: black;
+		}
+	}
+
+	& .a0 {
+		color: salmon;
+		
+		&::selection {
+			background-color: salmon;
+			color: black;
+		}
+	}
+
+
+	& .t0 {
+		color: #5bcefa;
+		
+		&::selection {
+			background-color: #5bcefa;
+			color: black;
+		}
+	}
+
+	& .t1 {
+		color: #f5a9b8;
+		
+		&::selection {
+			background-color: #f5a9b8;
+			color: black;
+		}
+	}
+
+	& .t2 {
+		color: #fff;
+		
+		&::selection {
+			background-color: #fff;
+			color: black;
+		}
+	}
+
+}
+
+@property --amplitude {
+	syntax: "<length>";
+	initial-value: 0px;
+}
+
+@keyframes wavy {
+
+	0%	{transform: translateY(calc(-1 * var(--amplitude)));}
+	50%	{transform: translateY(var(--amplitude));} 
+	100% {transform: translateY(calc(-1 * var(--amplitude)));}
+	
+}
+
+.wavy {
+	font-family: "League Mono";
+	text-align: left;
+	font-stretch: 100%;
+	letter-spacing: -2px;
+	padding: 60px 0;
+	font-size: 2em;
+	--amplitude: 5px;
+	& span {
+		display: inline-block;
+
+		--timing: 1s;
+
+		animation: wavy var(--timing) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+		
+		&:nth-child(10n+1) {animation-delay: calc(-9 * var(--timing) / 10);}
+		&:nth-child(10n+2) {animation-delay: calc(-8 * var(--timing) / 10);}
+		&:nth-child(10n+3) {animation-delay: calc(-7 * var(--timing) / 10);}
+		&:nth-child(10n+4) {animation-delay: calc(-6 * var(--timing) / 10);}
+		&:nth-child(10n+5) {animation-delay: calc(-5 * var(--timing) / 10);}
+		&:nth-child(10n+6) {animation-delay: calc(-4 * var(--timing) / 10);}
+		&:nth-child(10n+7) {animation-delay: calc(-3 * var(--timing) / 10);}
+		&:nth-child(10n+8) {animation-delay: calc(-2 * var(--timing) / 10);}
+		&:nth-child(10n+9) {animation-delay: calc(-1 * var(--timing) / 10);}
+
+		&:nth-child(1), 
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4) {
+			color: salmon;
+		}
+
+	}
+	&:hover {
+		
+		--amplitude: 30px;
+		font-stretch: 50%;
+		padding: 60px 0;
+	}
+}
+
+
+.clock {
+	background-color: #1b0329;
+	text-align: center;
+
+	color: #d48bff;
+
+	width: max-content;
+	padding: 4px 0;
+
+	& > #clock {
+		font-family: "Decasev", monospace;
+		font-size: 24px;
+
+		background-color: #0c0013;
+		color: #e7bdff;
+		margin: auto;
+		display: block;
+		width: 8ch;
+		padding: 1ch 3ch;
+		margin: 4px 0;
+		user-select: none;
+		
+		&::before {
+			content: "88:88:88" / "";
+			position: absolute;
+			color: #5c3274;
+			z-index: 0;
+			mix-blend-mode: lighten;
+		}
+
+		&::after {
+			content: "";
+			font-size: 12px;
+			position: absolute;
+
+			z-index: 0;
+			mix-blend-mode: lighten;
+		}
+	}
+}
+
+.chicory::after {
+	content: "";
+	image-rendering: pixelated;
+	float: right;
+
+	height: 200px;
+	width: 200px;
+	background: url(/assets/img/profilemap.png);
+}
+
+.chicory:hover::after {
+	background-position-x: 200px;
+}
+
+
+@keyframes digital-marquee {
+	0% {
+		text-indent: 20ch;
+	}
+
+	100% {
+		text-indent: -40ch;
+	}
+	
+}
+
+.digit-marquee {
+		font-family: "CozetteVector", monospace;
+		font-size: 26px;
+
+		background-color: #220b30;
+		color: #e7bdff;
+		width: 20ch;
+		height: 1em;
+		display: block;
+		overflow: hidden;
+		user-select: none;
+
+
+		&::before {
+			content: "█" / "";
+			position: absolute;
+			color: #5c3274;
+			z-index: 0;
+			mix-blend-mode: lighten;
+			text-indent: 0ch;
+		}
+
+
+		&>span {
+			display: block;
+			white-space: pre;
+			animation: digital-marquee 12s steps(60) 0s infinite;
+		}
+}
