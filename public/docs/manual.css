@@ -80,6 +80,7 @@ body {
 	}
 }
 
+
 .margin {
 	padding: 0 2em;
 	max-width: 720px;
@@ -176,7 +177,9 @@ h4 {
 	}
 }
 
-
+p {
+	line-height: 1.5;
+}
 
 header {
 	background: url(/assets/img/manual/waves.svg) repeat-x  #3f1c33;
@@ -310,21 +313,27 @@ section-num,
 
 doc-notice {
 	display: block;
+
 	border: 2px solid var(--table-light);
 	border-left-width: 10px;
 	padding: 1em;
 	margin: 1em;
 	line-height: 1.5;
 
-	& strong {
+	& .notice-title {
 		display: block;
-		color: var(--accent-tri);
-		line-height: 0.8;
-		border-bottom: 2px solid;
+		font-weight: bold;
+
+		line-height: 1.2;
+		border-bottom: 1px solid var(--table-light);
 	}
 
 	&.caution {
 		border-color: var(--accent-tri);
+		& .notice-title {
+			color: var(--accent-tri);
+			border-color: var(--accent-tri);
+		}
 	}
  
 }

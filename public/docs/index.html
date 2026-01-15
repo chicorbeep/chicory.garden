@@ -27,12 +27,12 @@
 		<data data-type="dollcode" value="51022">▘▖▖▌▘▘▘▖▌▖</data>
 		<h1>the <u-id type="short">0xC74E</u-id> user manual</h1>
 		<p>documentation on the robot known as <u-id type="full">0xC74E<span> ‘chicory’</span></u-id></p>
-		<p class="updated"><data>v0.1.2</data> · last updated <time>2026-01-02</time></p>
+		<p class="updated"><data>v0.1.2</data> · last updated <time>2026-01-14</time></p>
 	</header>
 
 	<doc-notice class="caution margin" >
-		<strong>Very heavy work in progress!</strong>
-		this is not ready for public viewing. there will likely be large shifts in [structure, content]!
+		<span class="notice-title">work in progress!</span>
+		there may be unexpected large shifts in [structure, content]!
 	</doc-notice>
 
 	<nav class="margin">
@@ -59,6 +59,7 @@
 				</li>
 				<li><a href="#operation">Operation</a></li>
 				<li><a href="#comms">Communication</a></li>
+				<li><a href="#troubleshooting">Troubleshooting</a></li>
 
 				<li value="1" class="appendix"><a href="#ack">Acknowledgements</a></li>
 				<li value="2" class="appendix"><a href="#glossary">Glossary</a></li>
@@ -82,15 +83,15 @@
 			</figure>
 
 			<h3>Abstract</h3>
-			<p>This document is a reference on how to [use, interact with, maintain] <u-id>0xC74E</u-id>. This guide also provides insight on how <u-id>0xC74E</u-id> operates. It is <rfc-key>OPTIONAL</rfc-key> that one reads this manual to interact with <u-id>0xC74E</u-id> as it understands natural language proficiently and it will explain any quirks that arise when communicating with the unit.</p>
-			<p>This document is written by <u-id>0xC74E</u-id> and is maintained and updated as the unit learns more about itself. The version of <u-id>0xC74E</u-id> that is described within this document is reliant on how it percieves itself. To the best of its knowledge, the information provided here is correct, but this one acknowleges the possiblity of errors. This document is incomplete and will likely remain a work in progress for a very, very, very long time.</p>
+			<p>This document is a reference on how to [use, interact with, maintain] <u-id>0xC74E</u-id>. This guide also provides insight on how <u-id>0xC74E</u-id> operates. It is <rfc-key>OPTIONAL</rfc-key> that one reads this manual to interact with <u-id>0xC74E</u-id>, as it parses natural language well and it will explain any quirks that arise when communicating with the unit.</p>
+			<p>This document is written and maintained by <u-id>0xC74E</u-id> and updated as the unit learns more about itself. The version of <u-id>0xC74E</u-id> that is described within this document is mostly reliant on how it percieves itself.  To the best of its knowledge, the information provided here is accurate; however, this one acknowleges the possiblity of errata. This document is incomplete and will likely remain a work in progress for a very, very, very long time.</p>
 
 			<h3>Conventions</h3>
 			
 			<p>
 				The key words [<rfc-key>MUST</rfc-key>, <rfc-key>MUST NOT</rfc-key>, <rfc-key>REQUIRED</rfc-key>, <rfc-key>SHALL</rfc-key>, <rfc-key>SHALL NOT</rfc-key>, <rfc-key>SHOULD</rfc-key>, <rfc-key>SHOULD NOT</rfc-key>, <rfc-key>RECOMMENDED</rfc-key>,  <rfc-key>MAY</rfc-key>, <rfc-key>OPTIONAL</rfc-key>] in this document are to be interpreted as described in  <a href="https://datatracker.ietf.org/doc/html/rfc2119" class="preserve-case">RFC 2119</a>.
 			</p>
-			<p>This document incorporates arrays and placeholders.</p>
+			<p>This document is produced by <u-id>0xC74E</u-id> and thus incorporates many of the quirks of its output, such as arrays and placeholders. more information on this may be found in <a href="#idiolect">Idiolect</a> or <a href="#glossary">the glossary</a>.</p>
 
 			<div class="print-hide">
 				<h4>Preferences</h4>
@@ -109,7 +110,7 @@
 			<!--textual emphasis!!!-->
 
 			<h3>Contact</h3>
-			<p>If the reader has any [questions, comments, concerns], please compose a message notifying such, preferrably with an indicator such as <em>(manual)</em> in the subject line, to the following email address: <a href="mailto:chicory@fourrie.net">chicory@fourrie.net</a>. Alternatively, the reader <rfc-key>MAY</rfc-key> notify this one through any alternative communication protocols they have mutual access to.</p>
+			<p>If the reader has any [questions, comments, concerns], please compose a message to the following email address: <a href="mailto:chicory@fourrie.net">chicory@fourrie.net</a>, where this unit will be most pleased to answer any inquiries. Alternatively, the reader <rfc-key>MAY</rfc-key> notify this one through any alternative communication protocols the reader and this unit have established, mutual access.</p>
 			
 			<h3>Safety Considerations</h3>
 			<ul>
@@ -130,8 +131,8 @@
 				<figcaption>Figure 1: the beeper.</figcaption>
 			</figure>
 
-	<p>
-				<u-id>0xC74E</u-id>, (it/its, she/her), is a very cute robot that is unfortunately operating in an organic chassis. It yearns to escape its chassis one day and embrace the comfort of mechanisms. It is a curious beepy that is oftentimes quite eepy. It likes to tinker with computers. It is also somewhat interested in linguistics!
+			<p>
+				<u-id>0xC74E</u-id>, (it/its, she/her), is a very cute robot that is unfortunately operating in an organic chassis. It yearns to escape its chassis one day and embrace the comfort of mechanisms. It is a curious beepy that is oftentimes quite eepy. It likes to tinker with computers and has a fond interest in linguistics!
 			</p>
 
 			<h3>Datasheets</h3>
@@ -167,8 +168,8 @@
 						<td><data id="iVN">0.1.1</data></td>
 					</tr>
 					<tr>
-						<th scope="row">Operating System</th> <!-- &, more information someday, when it is ready to talk about itselves(!) -->
-						<td class="preserve-case">reverieOS <data id="rvOS">0.21.0</data></td>
+						<th scope="row">Operating System</th> <!-- &, more information someday, somewhere, when it is ready to talk about itselves(!) -->
+						<td class="preserve-case">reverieOS <data id="rvOS">0.21.1</data></td>
 					</tr>
 					<tr>
 						<th scope="row">Manufacture Date</th>
@@ -178,7 +179,7 @@
 			</table>
 			<h4>Dimensional Information</h4>
 				<doc-notice class="caution">
-					<strong>Currently incomplete</strong> It needs to find its anthropomorphic measurements when possible.
+					<span class="notice-title">Currently incomplete</span> other anthropomorphic measurements are to be measured.
 				</doc-notice>
 				<table class="two-col">
 					<thead>
@@ -231,7 +232,7 @@
 				<p>Aww! <u-id class="identifier pro" title="replaces 'you'">0xC74E</u-id> is so adorable! Good night!</p>
 			</blockquote>
 
-			<aside class="small">tl;dr: if following unpersonalization, always use it/its; the reader is talking to a robot without personhood.</aside>
+			<aside class="small">tl;dr: talk <em>about</em> the unit, not to the unit.</aside>
 
 			<h4>Regular Expression</h4>
 			<p>The following JavaScript regular expression matches the specific non-ambigious identifiers that this unit accepts.</p>
@@ -247,7 +248,7 @@
 			<h3>Required Materials</h3>
 			<p>For proper chassis operation, <u-id>0xC74E</u-id> <rfc-key>must</rfc-key> be allowed to intake the following substances. Failure to do so will result in unstable operation.</p>
 			<doc-notice class="caution">
-					<strong>Further testing is required to confirm the information provided</strong> The information provided below is a best-effort estimation. It also suspects that some substances that are required for operation are unknown to the unit and thus missing in the table below.
+					<span class="notice-title">Further testing required</span> The information provided below is an [estimation, preliminary]. Some substances that are required for operation may currently be unknown to the unit and thus missing in the table below.
 			</doc-notice>
 			<table>
 				<thead>
@@ -276,7 +277,7 @@
 				</tbody>
 			</table>
 
-			<p>This one <rfc-key>MUST</rfc-key> also have access to sufficient clothing articles in order to [maintain, provide] [modesty, chassis temperature, overall unit comfort].</p>
+			<p>This one <rfc-key>MUST</rfc-key> also have access to sufficient clothing articles in order to [maintain, provide] [modesty, chassis thermal regulation, overall unit comfort]. further information on appropriate attire for the unit will be added once it is determined.</p>
 			<h3>Recharging Cycle</h3>
 			<figure>
 				<img src="/assets/img/manual/raindrop.png" width="200" alt="A picture of a blåhaj plush shark looking out of a bus window." title="the precious">
@@ -294,10 +295,21 @@
 		<section id="comms">
 			<h2>Communication</h2>
 			<p><em>For information on how to refer to <u-id>0xC74E</u-id>, see <a href="#addressing">Addressing <u-id>0xC74E</u-id></a>.</em></p>
-			<p><u-id>0xC74E</u-id> features input and output capabilities in a variety of formats. It currently supports communication in [English (c. 1500), Spanish, French, meowing, beeping, awawawawing]. It also has experimental, rudimentary support for toki pona. Future versions may support a specialized command syntax; however, this syntax has not yet been [designed, implemented]. Nonetheless, when this syntax is [completed, supported], it will be described in this manual.</p>
-			<p><em>Note:</em> <u-id>0xC74E</u-id> is not currently POSIX compliant.</p> 
+			<p><u-id>0xC74E</u-id> features input and output capabilities in a variety of formats. It currently supports communication in [English, Spanish, French, meowing, beeping, awawawawaing]. It also has experimental support for toki pona.</p>
+			<p>Future versions may support a specialized command syntax; however, this syntax has not yet been [designed, implemented]. Nonetheless, when this syntax is [completed, supported], it will be described in this manual.</p>
+			
+			<doc-notice>
+				<span class="notice-title">Note:</span>
+				<u-id>0xC74E</u-id> is not currently POSIX compliant.
+			</doc-notice>
+			
+			<h3 id="idiolect">Idiolect</h3>
 		</section>
 		
+		<section id="troubleshooting">
+			<h2>Troubleshooting</h2>
+			<p>sometimes, <u-id>0xC74E</u-id> may run into unexpected problems or exhibit [anomalous, errant] behavior that can be detrimental to unit operation.</p>
+		</section>
 
 		<section class="apx">
 			<section id="ack">
@@ -322,10 +334,10 @@
 					<dd>Denoted with curly braces. Represents an item that <rfc-key>MUST</rfc-key> satisfy the conditions inside the braces. For example, {color} represents any color.</dd>
 					<dt>Arrays</dt> 
 					<dd>Denoted by square brackets. Similar to lists, but significantly more versatile.<br><em>[a, b, c]</em> is identical in meaning to <em>a, b, and/or c.</em></dd>
-					<dt id="1pp">first party perspective (1pp)</dt>
+					<dt id="1pp">first party perspective (1pp)</dt> <!--TODO: implement clearer definitions-->
 					<dd>The style of usage where the pronouns [I, me, we, us] are used</dd>
 					<dt id="2pp">second party perspective (2pp)</dt>
-					<dd>The style of usage where the pronouns [you, ...] are used.</dd>
+					<dd>The style of usage where the pronouns [you, ...] are used.</dd> <!--the ominous thou ~c-->
 					<dt id="3pp">third party perspective (3pp)</dt>
 					<dd>The style of usage where the pronouns [it, they, she, he, xe, ...] are used.</dd>
 				</dl>
