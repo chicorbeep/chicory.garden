@@ -45,7 +45,8 @@
 
 	<article class="clock">
 		currently, it is
-		<span id="clock" aria-live="off">--:--:--</span>
+		<span id="date" class="display" aria-live="off">----------</span>
+		<span id="clock" class="display" aria-live="off">--:--:--</span>
 		for the chicory
 	</article>
 
@@ -71,6 +72,7 @@
 			let date = (new Date(new Date().getTime() - 25200000)); // ominous magic number (7h in ms)
 			let dateOffset = date;
 			let timeString = dateOffset.toISOString()
+			document.getElementById("date").innerText = timeString.slice(0,10);
 			document.getElementById("clock").innerText = timeString.slice(11,19);
 						
 		}

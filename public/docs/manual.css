@@ -231,11 +231,18 @@ header {
 nav > details {
 	break-after: page;
 
+
+
 	& > ol {
 		font-family: "Atkinson Hyperlegible Mono", monospace;
 
 		&>li>a {
 			text-decoration: none;
+
+			&:focus {
+				outline: 2px dashed var(--accent-pri);
+				outline-offset: 4px;
+			}
 
 			&::after {
 				content: " ↘";
@@ -245,6 +252,11 @@ nav > details {
 
 	& > summary {
 		display: inline;
+
+		&:focus {
+			outline: 2px dashed var(--accent-pri);
+			outline-offset: 4px;
+		}
 
 		&>h2 {
 			margin-bottom: 0;
