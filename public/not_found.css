@@ -11,7 +11,6 @@
 @keyframes prophecy {
 	0% {
 		margin-top: 0.02em;
-		
 	}
 
 	50% {
@@ -75,130 +74,88 @@ body {
 	max-width: none;
 }
 
-.bg, .vignette {
+bg-layer {
 	position: absolute;
 	height: 100vh;
 	width: 100vw;
-}
 
-.bg {
-	background: url(/assets/img/prophecy.png);
-	animation: background-scroll 20s linear 0s infinite;
-	filter:  contrast(0.5) brightness(0.3) saturate(2) ;
-	z-index: -10;
-}
-
-.vignette {
-	height: 40vh;
-	width: 200vw;
-	background: transparent;
-	outline: 1000px solid black;
-	filter: blur(100px);
-	z-index: -9;
-	margin-bottom: 10vh;
-}
-
-.pr-text {
-	margin: -6.75em 0 6.5em;
-	font-size: 1.6em;
-	text-transform: lowercase;
-	font-family: "Atkinson Hyperlegible Mono", monospace;
-	animation: background-scroll 10s linear 0s infinite;
-	background: url(/assets/img/prophecy.png);
-	filter: brightness(2);
-	background-clip: text;
-	color: transparent;
-	width: 20em;
-}
-
-.pr404 {
-	font-size: 8em;
-	display: inline-block;
-	color: transparent;
-	position: relative;
-	margin: auto;
-	letter-spacing: -10px;
-	animation: prophecy 3s ease-in-out 0s infinite;
-	font-variant-numeric: tabular-nums;
-
-	&::before {
-		content: "404";
-		margin: auto;
+	&.root {
 		background: url(/assets/img/prophecy.png);
-		background-clip: text;
-		color: #0000;
-		animation: 
-			background-scroll 10s linear 0s infinite, 
-			prophecy-color 3s ease-in-out 0s infinite;
-		position: absolute;
-		
-	}
-	&::after {
-		content: "404";
-		position: absolute;
-		inset: -10px;
-		
-		z-index: -2;
-		background: url(/assets/img/prophecy.png);
-		background-clip: text;
-		animation: 
-			prophecy-shadows 3s ease-in-out 0s infinite,
-			background-scroll 10s linear 0s infinite;
-		filter: brightness(1) opacity(0.5);
+		animation: background-scroll 20s linear 0s infinite;
+		filter: contrast(0.5) brightness(0.3) saturate(3);
+		z-index: -4;
 	}
 
+	&.vignette {
+		height: 40vh;
+		width: 200vw;
+		background: transparent;
+		outline: 1000px solid black;
+		filter: blur(100px);
+		z-index: -3;
+	}
+}
 
 
-}	
-
-article {
+article.error {
 	text-align: center;
 	height: 8em;
 	cursor: default;
 	user-select: none;
-}
 
-.music {
-	position: absolute;
-	bottom: 1em;
-	display: flex;
-	flex-direction: column-reverse;
-	& p {
-		font-size: 16px;
-		margin: 0;
-		line-height: 1.5;
-	}
- 
-	& audio {
-		box-shadow: none;
-		--media-background: transparent;
-		width: min(90vw, 500px);
-		opacity: 0.3;
-		transition: 400ms;
-		&:hover {
-			opacity: 1;
+	&>h1 {
+		font-size: 8em;
+		display: inline-block;
+		color: transparent;
+		position: relative;
+		margin: auto;
+		letter-spacing: -10px;
+		animation: prophecy 3s ease-in-out 0s infinite;
+		font-variant-numeric: tabular-nums;
+
+		&::before {
+			content: "404";
+			margin: auto;
+			background: url(/assets/img/prophecy.png);
+			background-clip: text;
+			color: #0000;
+			animation: 
+				background-scroll 10s linear 0s infinite, 
+				prophecy-color 3s ease-in-out 0s infinite;
+			position: absolute;
+		}
+		&::after {
+			content: "404";
+			position: absolute;
+			inset: -10px;
+			
+			z-index: -2;
+			background: url(/assets/img/prophecy.png);
+			background-clip: text;
+			animation: 
+				prophecy-shadows 3s ease-in-out 0s infinite,
+				background-scroll 10s linear 0s infinite;
+			filter: brightness(1) opacity(0.5);
 		}
 	}
 
-}
-
-
-@media (max-width: 900px) {
-	body {
-		font-size: 20px
+	& > span {
+		margin: -6.75em 0 6.5em;
+		font-size: 1.6em;
+		text-transform: lowercase;
+		display: block;
+		font-family: "Atkinson Hyperlegible Mono", monospace;
+		animation: background-scroll 10s linear 0s infinite;
+		background: url(/assets/img/prophecy.png);
+		filter: brightness(2);
+		background-clip: text;
+		color: transparent;
+		width: 20em;
 	}
-}
-
+}	
 
 @media (max-width: 600px) {
 	body {
 		font-size: 16px;
 	}
-
-	.music {
-		flex-direction: column;
-		top: 1em;
-		bottom: unset;
-	}
-
 }
