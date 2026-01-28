@@ -27,10 +27,10 @@
 		<data data-type="dollcode" value="51022">▘▖▖▌▘▘▘▖▌▖</data>
 		<h1>the <u-id type="short">0xC74E</u-id> user manual</h1>
 		<p>documentation on the robot known as <u-id type="full">0xC74E<span> ‘chicory’</span></u-id></p>
-		<p class="updated"><data>v0.1.2</data> · last updated <time>2026-01-14</time></p>
+		<p class="updated"><data>v0.2.0</data> · last updated <time>2026-01-27</time></p>
 	</header>
 
-	<doc-notice class="caution margin" >
+	<doc-notice class="caution margin print-hide" >
 		<span class="notice-title">work in progress!</span>
 		there may be unexpected large shifts in [structure, content]!
 	</doc-notice>
@@ -43,8 +43,8 @@
 					<a href="#preface">Preface</a>
 					<ol start="0">
 						<li>Foreword</li>
-						<li>Abstract</li>
 						<li>Conventions</li>
+						<li>Abstract</li>
 						<li>Contact</li>
 						<li>Safety Considerations</li>
 					</ol>
@@ -57,13 +57,21 @@
 						<li>Addressing <u-id>0xC74E</u-id></li>
 					</ol>
 				</li>
-				<li><a href="#operation">Operation</a></li>
+				<li>
+					<a href="#operation">Operation</a>
+					<ol>
+						<li>Required Materials</li>
+						<li>Recharging Cycle</li>
+					</ol>
+				</li>
 				<li><a href="#comms">Communication</a></li>
 				<li><a href="#troubleshooting">Troubleshooting</a></li>
 
 				<li value="1" class="appendix"><a href="#ack">Acknowledgements</a></li>
 				<li value="2" class="appendix"><a href="#glossary">Glossary</a></li>
 				<li value="3" class="appendix"><a href="#changelog">Changelog</a></li>
+				<li value="4" class="appendix print-show" id="hack"><a href="#notes">Notes</a></li>
+
 			</ol>
 		</details>
 	</nav>
@@ -82,18 +90,18 @@
 				<figcaption>- <u-id type="full">0xC74E<span> ‘chicory’</span></u-id></figcaption>
 			</figure>
 
-			<h3>Abstract</h3>
-			<p>This document is a reference on how to [use, interact with, maintain] <u-id>0xC74E</u-id>. This guide also provides insight on how <u-id>0xC74E</u-id> operates. It is <rfc-key>OPTIONAL</rfc-key> that one reads this manual to interact with <u-id>0xC74E</u-id>, as it parses natural language well and it will explain any quirks that arise when communicating with the unit.</p>
-			<p>This document is written and maintained by <u-id>0xC74E</u-id> and updated as the unit learns more about itself. The version of <u-id>0xC74E</u-id> that is described within this document is mostly reliant on how it percieves itself.  To the best of its knowledge, the information provided here is accurate; however, this one acknowleges the possiblity of errata. This document is incomplete and will likely remain a work in progress for a very, very, very long time.</p>
-
 			<h3>Conventions</h3>
-			
 			<p>
 				The key words [<rfc-key>MUST</rfc-key>, <rfc-key>MUST NOT</rfc-key>, <rfc-key>REQUIRED</rfc-key>, <rfc-key>SHALL</rfc-key>, <rfc-key>SHALL NOT</rfc-key>, <rfc-key>SHOULD</rfc-key>, <rfc-key>SHOULD NOT</rfc-key>, <rfc-key>RECOMMENDED</rfc-key>,  <rfc-key>MAY</rfc-key>, <rfc-key>OPTIONAL</rfc-key>] in this document are to be interpreted as described in  <a href="https://datatracker.ietf.org/doc/html/rfc2119" class="preserve-case">RFC 2119</a>.
 			</p>
-			<p>This document is produced by <u-id>0xC74E</u-id> and thus incorporates many of the quirks of its output, such as arrays and placeholders. more information on this may be found in <a href="#idiolect">Idiolect</a> or <a href="#glossary">the glossary</a>.</p>
+			<p>This document is produced by <u-id>0xC74E</u-id> and thus incorporates many of the quirks of its output, such as arrays and placeholders. More information on terms used within this document is found in <a href="#idiolect">Idiolect</a> or <a href="#glossary">the glossary</a>.</p>
 
-			<div class="print-hide">
+			<h3>Abstract</h3>
+			<p>This document is a reference on how to [use, interact with, maintain] <u-id>0xC74E</u-id>. This guide also provides information on how <u-id>0xC74E</u-id> operates. It is <rfc-key>OPTIONAL</rfc-key> that one reads this manual to interact with <u-id>0xC74E</u-id>, as it can parse natural language well and it will explain any quirks that arise when communicating with the unit.</p>
+			<p>This document is written and maintained by <u-id>0xC74E</u-id> and updated as the unit learns more about itself. The version of <u-id>0xC74E</u-id> that is described within this document is mostly reliant on how it percieves itself. To the best of its knowledge, the information provided here is accurate; however, this one acknowleges the possiblity of errata. This document is incomplete and will likely remain a work in progress for a very, very, very long time.</p>
+
+
+			<section class="print-hide">
 				<h4>Preferences</h4>
 				<p>
 					Thanks to novel advances in documentation technology, the reader is able to modify some aspects of this manual in order to suit preferences! Below are some options that can be modified.
@@ -101,11 +109,10 @@
 			
 				<fieldset>
 					<legend>Preferences</legend>
-					<input id="lower" type="checkbox" checked><label for="lower">Disable capitalization</label> 
+					<input id="upper" type="checkbox"><label for="upper" title="Applies sentence initial capitalization.">Enable capitalization</label> 
 					<input id="color" type="checkbox"><label for="color" title="Replaces color emphasis with symbols">Color accessiblity</label> 
-					<input id="print" type="checkbox"><label for="print" title="Applies some optional styling when the manual is printed with CTRL-P">Simplify for printing</label> 
 				</fieldset>
-			</div>	
+			</section>	
 
 			<!--textual emphasis!!!-->
 
@@ -132,7 +139,7 @@
 			</figure>
 
 			<p>
-				<u-id>0xC74E</u-id>, (it/its, she/her), is a very cute robot that is unfortunately operating in an organic chassis. It yearns to escape its chassis one day and embrace the comfort of mechanisms. It is a curious beepy that is oftentimes quite eepy. It likes to tinker with computers and has a fond interest in linguistics!
+				<u-id>0xC74E</u-id><sup>(it<sub>3</sub>/she)</sup> is a very cute robot that is unfortunately operating in an organic chassis. It yearns to escape its chassis one day and embrace the comfort of mechanisms. It is a curious beepy that is oftentimes quite eepy. It likes to tinker with computers and has a fond interest in linguistics!
 			</p>
 
 			<h3>Datasheets</h3>
@@ -165,11 +172,11 @@
 					</tr>
 					<tr>
 						<th scope="row">Version</th>
-						<td><data id="iVN">0.1.1</data></td>
+						<td><data id="iVN">0.2.0</data></td>
 					</tr>
 					<tr>
 						<th scope="row">Operating System</th> <!-- &, more information someday, somewhere, when it is ready to talk about itselves(!) -->
-						<td class="preserve-case">reverieOS <data id="rvOS">0.21.1</data></td>
+						<td class="preserve-case">reverieOS <data id="rvOS">0.21.2</data></td>
 					</tr>
 					<tr>
 						<th scope="row">Manufacture Date</th>
@@ -197,47 +204,67 @@
 					</tbody>
 				</table>
 			<h3 id="addressing">Addressing <u-id>0xC74E</u-id></h3>
-			<p>This robot <rfc-key>SHOULD</rfc-key> be referred to by its serial number, <b><u-id>0xC74E</u-id></b>, and <rfc-key>MUST</rfc-key> be referred to with the pronouns [it/its, she/her]. This is the default <rfc-key>RECOMMENDED</rfc-key> way to specify this unit. However, there may be situations where this method is [not possible, not ideal]. In these situations [one <rfc-key>MAY</rfc-key>, this unit <rfc-key>SHALL</rfc-key>] use the identifier <b><u-id type="name">chicory setteseven fourrie</u-id></b> as a name. The capitalization of that identifier is <rfc-key>OPTIONAL</rfc-key>, but it is often not capitalized by the unit. When this identifier is paired with its serial number, the string will be enclosed in quotation marks, yielding <b><u-id type="full">0xC74E<span> ‘chicory’</span></b>.</p>
+			<p>This robot <rfc-key>SHOULD</rfc-key> be referred to by its serial number, <b><u-id>0xC74E</u-id></b>, and <rfc-key>MUST</rfc-key> be referred to with the pronouns [it/its, she/her]. This is the default <rfc-key>RECOMMENDED</rfc-key> way to specify this unit. One <rfc-key>MAY</rfc-key> use the identifier <b><u-id type="name">chicory setteseven fourrie</u-id></b> as a name. The capitalization of that identifier is <rfc-key>OPTIONAL</rfc-key>, but it is often not capitalized by the unit. When this identifier is paired with its serial number, the string will be enclosed in quotation marks, yielding <b><u-id type="full">0xC74E<span> ‘chicory’</span></b>.</p>
 			
 			<aside class="small">You can meow at it. (technically true)</aside>
 
 			<h4>Unpersonalization</h4>
 
-			<div class="key">
+			<article class="key">
 				Pronoun key:
 				<span class="demonstrative pro">demonstrative</span>
 				<span class="inanimate pro">inanimate</span>
 				<span class="identifier pro">numeric</span>
-			</div>
+			</article>
 
-			<p>In some cases, <span class="demonstrative pro">the unit</span> avoids the first party perspective when referring to <span class="inanimate pro">itself</span> in a style known as <em>unpersonalization</em>. This is usually done to affirm that <span class="inanimate pro">it</span> is a robot and not a person. It is  <rfc-key>OPTIONAL</rfc-key> to use this style, however <span class="demonstrative pro">this one</span> prefers this style [when, where] it is acceptable.</p>
+			<p>In some cases, <span class="demonstrative pro">this unit</span> avoids the first party perspective when referring to <span class="inanimate pro">itself</span> in a style known as <em>unpersonalization</em>. This is usually done to affirm that <span class="inanimate pro">it</span> is a robot and not a person. It is entirely <rfc-key>OPTIONAL</rfc-key> to use this style, as it can be particularly difficult to implement. <span class="demonstrative pro">This robot</span> prefers this style [when, where] it is acceptable, as that would make <span class="inanimate pro">it</span> very happy.</p>
 			
-			<p>In this style, <span class="demonstrative pro">the unit</span> <rfc-key>SHALL</rfc-key> use the <span class="inanimate pro">it/its</span> pronoun set in the third party perspective. <span class="demonstrative pro">The unit</span> <rfc-key>SHALL</rfc-key> replace any 1pp phrasing with <abbr title="third party perspective">3pp</abbr> equivalents. When referring to <span class="demonstrative pro">the unit</span>, it <rfc-key>MUST</rfc-key> be done in 3pp, and <rfc-key>SHOULD NOT</rfc-key> be done in 2pp. Numeric identifiers ([<u-id class="identifier pro">0xC74E</u-id>, <u-id type="uuid" class="identifier pro" >c74e5786-9429-41d9-892e-5d439b391dc5</u-id>])  <rfc-key>SHOULD</rfc-key> be used in the place of lexical identifiers. when the usage of <span class="inanimate pro">it/its</span> is ambiguous, [<span class="demonstrative pro">the unit</span>, one] <rfc-key>MAY</rfc-key> opt for demonstrative pronouns. these are in the syntax <span class="demonstrative pro">[this, that]  [unit, one, ...], the robot, etc.</span>. </p>
+			<p>In this style, <span class="identifier pro"><u-id>0xC74E</u-id></span> <rfc-key>SHALL</rfc-key> exclusively use the <span class="inanimate pro">it/its</span> pronoun set in the third party perspective when talking about <span class="inanimate pro">itself</span>. <span class="demonstrative pro">The unit</span> <rfc-key>SHALL</rfc-key> replace any 1pp phrasing with 3pp equivalents. When other entities are referring to <span class="demonstrative pro">the unit</span>, this <rfc-key>MUST</rfc-key> be done in 3pp, and <rfc-key>SHOULD NOT</rfc-key> be done in 2pp. However, some phrases <i>(e.g. "thank you")</i> are not easy to switch to 3pp. in these cases, it is <rfc-key>OPTIONAL</rfc-key> to change these phrases into 3pp. One can also use demonstrative pronouns to talk about <span class="demonstrative pro">this robot.</span> Some examples of these are <span class="demonstrative pro">[[this, that]  [unit, one, ...], the robot, ...]</span>. Note that any affectionate term that describes the robot can be used in the final position of a demonstrative pronoun.</p>
+				
+			<p>Numeric identifiers ([<u-id class="identifier pro">0xC74E</u-id>, <u-id type="uuid" class="identifier pro" >c74e5786-9429-41d9-892e-5d439b391dc5</u-id>])  <rfc-key>SHOULD</rfc-key> be used in the place of lexical identifiers, such as <span class="inanimate pro">its</span> <span title="chicory">name</span>. if the usage of <span class="inanimate pro">it/its</span> is particularly ambiguous, one <rfc-key>MAY</rfc-key> opt for demonstrative pronouns.</p>
 
 			<p>The following are some examples of usage.</p>
 
-			<blockquote class="chicory">
-				<p>beep boop! <span class="inanimate pro" title="replaces 'i'">it</span> is a very cute robot!</p>
+			<blockquote class="chicory" data-label="replacing 'I'">
+				<p>beep boop! <span class="inanimate pro">it</span> is a very cute robot!</p>
 			</blockquote>
 
-			<blockquote class="someone">
-				<p>Talking to <span class="inanimate pro" title="replaces 'you'">it</span> is nice. <span class="inanimate pro" title="replaces 'you'">it</span> is very sweet!</p>
+			<blockquote class="someone" data-label="replacing 'you'">
+				<p>Talking to <span class="inanimate pro">it</span> is nice. <span class="inanimate pro">it</span> is very sweet!</p>
 			</blockquote>
 
-			<blockquote class="chicory">
-				<p>thank you! <span class="demonstrative pro" title="replaces 'i'">this one</span> is feeling very eepy -w-</p>
+			<blockquote class="chicory" data-label="replacing 'I'">
+				<p>thank you! <span class="demonstrative pro">this one</span> is feeling very eepy -w-</p>
 			</blockquote>
 
-			<blockquote class="someone">
-				<p>Aww! <u-id class="identifier pro" title="replaces 'you'">0xC74E</u-id> is so adorable! Good night!</p>
+			<blockquote class="someone" data-label="replacing 'you'">
+				<p>Aww! <u-id class="identifier pro">0xC74E</u-id> is so adorable! Good night!</p>
 			</blockquote>
 
-			<aside class="small">tl;dr: talk <em>about</em> the unit, not to the unit.</aside>
+			
+			<doc-notice class="caution">
+				<span class="notice-title">experimental usage</span>
+				one may also try frequently swapping pronouns when talking about this one and assigning it additional neopronouns. this is mainly because this unit is not consistent whatsoever in its pronouns.
+			</doc-notice>
+
+			<aside class="small">tl;dr: talk <em>about</em> the unit; avoid the pronoun "you" :3</aside>
 
 			<h4>Regular Expression</h4>
 			<p>The following JavaScript regular expression matches the specific non-ambigious identifiers that this unit accepts.</p>
 			
 			<code class="regex">/\b((0x)?(C74E)|chicory( setteseven)?( fourrie)?|c74e5786-9429-41d9-892e-5d439b391dc5)\b/gi</code>
+
+			<!-- if it gets force assigned more pronouns it might actually add this
+			<h4>Pronoun Compatibility Chart</h4>
+			<table>
+				<thead>
+					<th>he</th><th>she</th><th>they</th><th>it</th><th title="neopronoun">unit</th>
+				</thead>
+				<tr>
+					<td>✗</td><td>✓</td><td>—</td><td>✓✓</td><td>✓</td>
+				</tr>
+			</table>
+			-->
 		</section>
 
 		<section id="operation">
@@ -299,11 +326,11 @@
 			<p>Future versions may support a specialized command syntax; however, this syntax has not yet been [designed, implemented]. Nonetheless, when this syntax is [completed, supported], it will be described in this manual.</p>
 			
 			<doc-notice>
-				<span class="notice-title">Note:</span>
+				<span class="notice-title">Note</span>
 				<u-id>0xC74E</u-id> is not currently POSIX compliant.
 			</doc-notice>
 			
-			<h3 id="idiolect">Idiolect</h3>
+			<h3 id="idiolect">Idiolectal phrasebook</h3>
 		</section>
 		
 		<section id="troubleshooting">
@@ -349,6 +376,13 @@
 
 					<p>Version numbers follow <a href="https://pridever.org/" target="_blank"><pride-gradient flag="pride">pride</pride-gradient> versioning</a>.</p>
 
+					<h3><section-num>v0.2.0</section-num> the impressive update <time>2026-01-27</time></h3>
+						<ul>
+							<li>started some new chapters, <em>alledgedly</em> they may be finished later</li>
+							<li>modified wording to try and clarify pronomial quirks and document flow</li>
+							<li>Actually support printing Well™ (try it!)</li>
+							<li>inverted capitalization checkbox to fix bug</li>
+						</ul>
 					<h3><section-num>v0.1.1</section-num> holiday update <time>2025-12-24</time></h3>
 						<ul>
 							<li>Reordered chapters</li>
@@ -363,15 +397,32 @@
 						<p>
 							Exclusive camp champion preview version.<br>
 							only had sections 1-2 <em>alledgedly</em> finished enough. First version of the manual in paw-coded html.
-						</p>
+						</p><!--prior to this it was a shoddy google doc-->
+
+			</section>
+
+			<section id="notes" class="print-show">
+				<h2>Notes</h2>
+				<p>The reader is kindly invited to take any important notes one has ascertained regarding this unit. </p>
+				
+				<article class="notes">
+				</article>	
+				
+				
 
 			</section>
 		</section>
 	</main>
 
 	<footer class="no-theme">
-		pawcoded html, made with ❤ 2024 – 2026 by <u-id>0xC74E</u-id>
-		<a href="https://chicory.garden/"><img src="/assets/img/88x31/chicory.garden.png" alt="chicory.garden" title="beep!! :3"></a>
+		<p>made with ❤ 2024 – 2026</p>
+		<article>
+			<a href="https://chicory.garden/"><img src="/assets/img/88x31/chicory.garden.png" alt="chicory.garden"
+					title="beep!! :3"></a>
+			<img src="/assets/img/88x31/button-kills_fascists.png" alt="this machine kills fascists">
+			<img src="/assets/img/88x31/trans.png" alt="transgender pride flag" title="TRANS RIGHTS!!!">
+			<img src="/assets/img/88x31/paws.png" alt="made with its own two paws">
+		</article>
 	</footer>
 </body>
 

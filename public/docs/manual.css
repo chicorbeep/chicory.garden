@@ -6,6 +6,11 @@
 	--accent-tri: #f5cc44;
 	--table-light: oklch(from var(--background) calc(l + 0.2) c h);
 	--text-light: color-mix(in oklch, var(--text-color) 80%, var(--background) 20%);
+
+	--sans-serif: "Atkinson Hyperlegible Next", sans-serif;
+	--monospace: "Atkinson Hyperlegible Mono", monospace;
+
+		scroll-behavior: smooth;
 }
 
 @keyframes waves {
@@ -20,16 +25,22 @@
 }
 
 
+
+.print-show {
+	display: none;
+}
+
+
 body {
 	background: var(--background);
 	color: var(--text-color);
 	line-height: 1.7;
-	
+
 	margin: auto;
 
-	font-family: "Atkinson Hyperlegible Next", sans-serif;
+	font-family: var(--sans-serif);
 
-	&:has(#lower:checked) {
+	&:has(#upper:not(:checked)) {
 		text-transform: lowercase;
 	}
 
@@ -112,12 +123,12 @@ aside {
 	line-height: 1.3;
 	width: max-content;
 	max-width: 400px;
+	border: 1px solid var(--table-light);
+	margin: 0 0 1em 8px;
 
 	&.small {
-		border: 1px solid var(--table-light);
 		color: var(--text-light);
 		padding: 0.5em;
-  
 		font-size: 0.8rem;
 		display: block;
 	}
@@ -209,7 +220,7 @@ header {
 		right: max(calc((100dvw - 720px)/ 2), 3em);
 		top: 1em;
 		font-size: 16px;
-		font-family: monospace;
+		font-family: var(--monospace);
 		padding: 3px 6px;
 	}
 	&>.updated {
@@ -234,7 +245,8 @@ nav > details {
 
 
 	& > ol {
-		font-family: "Atkinson Hyperlegible Mono", monospace;
+		font-family: var(--monospace);
+		margin-left: 0.5em;
 
 		&>li>a {
 			text-decoration: none;
@@ -520,12 +532,13 @@ rfc-key {
 blockquote {
 	padding: 0.5em 1em;
 	border: 1px solid;
+	position: relative;
 
 	&.chicory {
 		background-color: #691a39;
 		border-color: #ff3e8b;
 		max-width: fit-content;
-		font-family: "Atkinson Hyperlegible Mono", monospace;
+		font-family: var(--monospace);
 		letter-spacing: -1px;
 	}
 
@@ -533,6 +546,21 @@ blockquote {
 		background-color: var(--table-light);
 		border-color: var(--text-light);
 		max-width: fit-content;
+	}
+
+	&[data-label] {
+		margin-top: 2em;
+	}
+
+	&[data-label]::before {
+		content: "(" attr(data-label) ")";
+		position: absolute;
+		top: -24px;
+		font-size: 12px;
+		color: var(--text-light);
+		font-family: var(--sans-serif);
+		letter-spacing: 0;
+		font-style: italic;
 	}
 
 	& > p {
@@ -557,9 +585,12 @@ blockquote {
 
 footer {
 	border-top: 2px solid;
-	margin-top: 3em;
+	margin: 3em 0;
 	text-align: center;
 }
+
+
+
 
 @media (max-width: 600px) {
 	header {
