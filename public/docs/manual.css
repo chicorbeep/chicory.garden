@@ -10,7 +10,10 @@
 	--sans-serif: "Atkinson Hyperlegible Next", sans-serif;
 	--monospace: "Atkinson Hyperlegible Mono", monospace;
 
-		scroll-behavior: smooth;
+	scroll-behavior: smooth;
+	scrollbar-color: white #2128;
+
+	color-scheme: dark;
 }
 
 @keyframes waves {
@@ -24,19 +27,24 @@
 	
 }
 
-
-
 .print-show {
 	display: none;
 }
 
 
 body {
+
 	background: var(--background);
 	color: var(--text-color);
+	font-family: "Cozette", "Atkinson Hyperlegible Next", sans-serif;
 	line-height: 1.7;
 
 	margin: auto;
+	box-sizing: border-box;
+	padding: 0;
+
+	max-width: none;
+
 
 	font-family: var(--sans-serif);
 
@@ -60,36 +68,199 @@ body {
 			}
 
 			&[flag="pride"]::before {
-				content: url(/assets/img/flags/xx-pride-lgbt-progress.svg);
+				content: url(assets/flags/xx-pride-lgbt-progress.svg);
 
 			}
 
 			&[flag="transgender"]::before {
-				content: url(/assets/img/flags/xx-pride-trans.svg);
+				content: url(assets/flags/xx-pride-trans.svg);
 			}
 
 			&[flag="transfem"]::before {
-				content: url(/assets/img/flags/xx-pride-transfeminine.svg);
+				content: url(assets/flags/xx-pride-transfeminine.svg);
 			}
 
 			&[flag="enby"]::before {
-				content: url(/assets/img/flags/xx-pride-nonbinary.svg);
+				content: url(assets/flags/xx-pride-nonbinary.svg);
 			}
 
 			&[flag="robotkin"]::before, &[flag="robotkin-stepped"]::before {
-				content: url(/assets/img/flags/xx-robotkin.svg);
+				content: url(assets/flags/xx-robotkin.svg);
 			}
 
 			&[flag="aroace"]::before {
-				content: url(/assets/img/flags/xx-pride-aroace.svg);
+				content: url(assets/flags/xx-pride-aroace.svg);
 			}
 
 			&[flag="plural"]::before {
-				content: url(/assets/img/flags/xx-plurality.svg);
+				content: url(assets/flags/xx-plurality.svg);
 			}
 		}
 	}
 }
+
+a {
+	color: #FF9999;
+}
+
+a:visited {
+	color: #ff6666;
+}
+
+a:focus,
+a:hover {
+	color: #FFCCCC;
+}
+
+a:active {
+	color: #ffbc40;
+}
+
+hr {
+	border: 1px solid white;
+}
+
+pre,
+code,
+textarea,
+time,
+data,
+u-id {
+	text-transform: none;
+	font-family: "Atkinson Hyperlegible Mono", monospace;
+}
+
+u-id[type="name"] {
+	font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+u-id[type="full"]>span {
+	font-family: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+/* It's time for the flags! */
+
+pride-gradient[flag="pride"] {
+	background: linear-gradient(90deg in oklch, #f35b57, #f7a451, #f3da55, #8fd860, #7093ff, #be7dff);
+}
+
+pride-gradient[flag="transgender"],
+.trans {
+	background: linear-gradient(90deg in oklch, #5bcefa, #f5a9b8, #fff, #f5a9b8, #5bcefa);
+}
+
+pride-gradient[flag="transfem"] {
+	background: linear-gradient(90deg in oklch, #5bcefa, #f7dae6, #f7afcf, #f688b9, #f7afcf, #f7dae6, #5bcefa);
+}
+
+pride-gradient[flag="enby"] {
+	background: linear-gradient(90deg in oklch, #FFF433, #FFF8E7, #9B59D0, #7f7f7f);
+}
+
+pride-gradient[flag="robotkin"] {
+	background: linear-gradient(90deg in oklch, #fff, #f21c00, #53ee00, #3b8aff, #7f7f7f);
+}
+
+pride-gradient[flag="robotkin-stepped"] {
+	background: linear-gradient(90deg in oklch, #fff 0 14%, #f21c00 14% 40%, #53ee00 40% 62%, #3b8aff 62% 85%, #979797 85% 100%);
+}
+
+pride-gradient[flag="aroace"] {
+	background: linear-gradient(90deg in oklch, #da8b00, #e8cc00, #ffffff, #6fafdf, #5482ca);
+}
+
+pride-gradient[flag="plural"] {
+	background: linear-gradient(90deg in oklch, #7e4b77, #d19ef3, #8784c9, #9ac3b0, #f2edb9);
+}
+
+pride-gradient[flag],
+.trans {
+	background-clip: text;
+	color: transparent;
+}
+
+/* OLD CSS FROM FIRST GARDEN'S style.css */
+
+.nav-banner {
+	width: 100dvw;
+	background: linear-gradient(90deg, #201 50%, #402 50%);
+	border: 3px double #a05;
+	border-width: 3px 0;
+	margin: 4px 0;
+
+	nav {
+		margin: auto;
+		max-width: 960px;
+		font-size: 14px;
+		line-height: 14px;
+		padding: 2px 14px;
+		background: center/960px linear-gradient(90deg, #201, #402);
+		text-align: right;
+		box-sizing: border-box;
+		min-height: 18px;
+		
+		& a {
+			padding: 0 2px 0 6px;
+			text-decoration: none;
+			border-left: 1px dashed #a05;
+
+			&:hover {
+				text-decoration: 1px wavy underline;
+			}
+		}
+
+		& .breadcrumb {
+			float: left;
+
+			color: #fab;
+			padding: 1px 0.5ch;
+			margin: -1px 0 0 0;
+			border: none;
+
+			&::before {
+				content: "‹ ";
+			}
+		}
+
+		& .decor {
+			padding: 0 2px 0 6px;
+		}
+	}
+}
+
+
+.btn {
+	box-sizing: border-box;
+	width: 88px;
+	height: 31px;
+
+
+	&.placeholder {
+		border: 1px dashed;
+		text-align: center;
+		align-content: center;
+		font-size: 80%;
+		line-height: 0.9;
+	}
+}
+
+.buttons img,
+.buttons {
+	image-rendering: pixelated;
+}
+
+.comment,
+small {
+	opacity: 0.7;
+}
+
+
+code {
+	border: 1px solid;
+	padding: 1px 2px;
+}
+
+/* end old css */
 
 
 .margin {
@@ -193,7 +364,7 @@ p {
 }
 
 header {
-	background: url(/assets/img/manual/waves.svg) repeat-x  #3f1c33;
+	background: url(assets/waves.svg) repeat-x  #3f1c33;
 	background-position: 0 100%;
 	background-size: 360px;
 	padding: 4em max(calc((100dvw - 720px)/ 2), 3em) 0;
@@ -242,8 +413,6 @@ header {
 nav > details {
 	break-after: page;
 
-
-
 	& > ol {
 		font-family: var(--monospace);
 		margin-left: 0.5em;
@@ -272,6 +441,16 @@ nav > details {
 
 		&>h2 {
 			margin-bottom: 0;
+			cursor: pointer;
+
+			&:hover {
+				color: #fcf;
+
+				&::before {
+					background-color: #fcf;
+				}
+			}
+
 			&::before {
 				content: "▸";
 			}
@@ -342,7 +521,7 @@ doc-notice {
 	border-left-width: 10px;
 	padding: 1em;
 	margin: 1em;
-	line-height: 1.5;
+	line-height: 1;
 
 	& .notice-title {
 		display: block;
@@ -350,6 +529,7 @@ doc-notice {
 
 		line-height: 1.2;
 		border-bottom: 1px solid var(--table-light);
+		margin-bottom: 4px;
 	}
 
 	&.caution {
@@ -359,11 +539,20 @@ doc-notice {
 			border-color: var(--accent-tri);
 		}
 	}
+
+	&.danger {
+		border-color: var(--accent-sec);
+		& .notice-title {
+			color: var(--accent-sec);
+			border-color: var(--accent-sec);
+		}
+	}
  
 }
 
-
-
+.hr-white {
+	border-color: white;
+}
 
 
 
@@ -587,6 +776,15 @@ footer {
 	border-top: 2px solid;
 	margin: 3em 0;
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	padding: 1em;
+
+	* {
+		align-content: center;
+		line-height: 1;
+	}
 }
 
 

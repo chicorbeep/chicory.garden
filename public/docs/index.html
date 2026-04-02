@@ -4,12 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>the 0xC74E user manual</title>
-	<link rel="icon" href="/assets/img/favicon.png">
-	<link href="/style.css" rel="stylesheet">
 	<link href="manual.css" rel="stylesheet">
 	<link href="manual-print.css" rel="stylesheet" media="print">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://chicory.garden/">
+	<meta property="og:url" content="https://chicory.garden/docs/">
 	<meta property="og:title" content="the 0xC74E user manual">
 	<meta property="og:description" content="documentation on the robot known as 0xC74E ‘chicory’">
 </head>
@@ -17,9 +15,7 @@
 <body>
 	<section class="nav-banner print-hide">
 		<nav>
-			<a class="breadcrumb" href="/">root</a>
-			<a class="breadcrumb" href="/about.html">about</a>
-			<a class="breadcrumb" href="/docs/index.html">user manual</a>
+			<a class="breadcrumb" href="/">back to chicory.garden</a>
 		</nav>
 	</section>
 
@@ -27,7 +23,7 @@
 		<data data-type="dollcode" value="51022">▘▖▖▌▘▘▘▖▌▖</data>
 		<h1>the <u-id type="short">0xC74E</u-id> user manual</h1>
 		<p>documentation on the robot known as <u-id type="full">0xC74E<span> ‘chicory’</span></u-id></p>
-		<p class="updated"><data>v0.2.0</data> · last updated <time>2026-02-10</time></p>
+		<p class="updated"><data>v0.3.0</data> · last updated <time>2026-03-31</time></p>
 	</header>
 
 	<doc-notice class="caution margin print-hide" >
@@ -46,7 +42,7 @@
 						<li>Conventions</li>
 						<li>Abstract</li>
 						<li>Contact</li>
-						<li>Safety Considerations</li>
+						<li>Considerations</li>
 					</ol>
 				</li>
 				<li>
@@ -61,11 +57,23 @@
 					<a href="#operation">Operation</a>
 					<ol>
 						<li>Required Materials</li>
+						<li>Accessories</li>
+					</ol>
+				</li>
+
+				<li>
+					<a href="#maint">Maintenance</a>
+					<ol>
 						<li>Recharging Cycle</li>
 					</ol>
 				</li>
 				<li><a href="#comms">Communication</a></li>
-				<li><a href="#troubleshooting">Troubleshooting</a></li>
+				<li>
+					<a href="#troubleshooting">Troubleshooting</a>
+					<ol>
+						<li>Processor Cascades</li>
+					</ol>
+				</li>
 
 				<li value="1" class="appendix"><a href="#ack">Acknowledgements</a></li>
 				<li value="2" class="appendix"><a href="#glossary">Glossary</a></li>
@@ -76,7 +84,7 @@
 		</details>
 	</nav>
 	
-	<main class="no-theme margin">
+	<main class="margin">
 		<section id="preface">
 			<h2>Preface</h2>
 			<h3 class="foreword">Foreword</h3>
@@ -84,8 +92,7 @@
 			<figure>
 				<blockquote class="chicory">
 						<p>beep!</p>
-						<br>
-						<p>thank you so much for taking the time to read this manual! it cannot express the dedication it put into creating this document. it hopes that the manual served some use for the reader.</p>
+						<p>from the bottom of its core, thank you so much for taking the time to read this manual!! it truly means a lot to this unit that the reader is interested in learning about this unit. have fun reading this manual, and don't be afraid to beep at this one if one thought this manual was interesting :3 </p>
 				</blockquote>
 				<figcaption>- <u-id type="full">0xC74E<span> ‘chicory’</span></u-id></figcaption>
 			</figure>
@@ -94,7 +101,7 @@
 			<p>
 				The key words [<rfc-key>MUST</rfc-key>, <rfc-key>MUST NOT</rfc-key>, <rfc-key>REQUIRED</rfc-key>, <rfc-key>SHALL</rfc-key>, <rfc-key>SHALL NOT</rfc-key>, <rfc-key>SHOULD</rfc-key>, <rfc-key>SHOULD NOT</rfc-key>, <rfc-key>RECOMMENDED</rfc-key>,  <rfc-key>MAY</rfc-key>, <rfc-key>OPTIONAL</rfc-key>] in this document are to be interpreted as described in  <a href="https://datatracker.ietf.org/doc/html/rfc2119" class="preserve-case">RFC 2119</a>.
 			</p>
-			<p>This document is produced by <u-id>0xC74E</u-id> and thus incorporates many of the quirks of its output, such as arrays and placeholders. More information on terms used within this document is found in <a href="#idiolect">Idiolect</a> or <a href="#glossary">the glossary</a>.</p>
+			<p>This document is produced by <u-id>0xC74E</u-id> and thus incorporates many of the quirks of its output, such as arrays and placeholders. More information on terms used within this document is found in <a href="#glossary">the glossary</a>.</p>
 
 			<h3>Abstract</h3>
 			<p>This document is a reference on how to [use, interact with, maintain] <u-id>0xC74E</u-id>. This guide also provides information on how <u-id>0xC74E</u-id> operates. It is <rfc-key>OPTIONAL</rfc-key> that one reads this manual to interact with <u-id>0xC74E</u-id>, as it can parse natural language well and it will explain any quirks that arise when communicating with the unit.</p>
@@ -119,10 +126,32 @@
 			<h3>Contact</h3>
 			<p>If the reader has any [questions, comments, concerns], please compose a message to the following email address: <a href="mailto:chicory@fourrie.net">chicory@fourrie.net</a>, where this unit will be most pleased to answer any inquiries. Alternatively, the reader <rfc-key>MAY</rfc-key> notify this one through any alternative communication protocols the reader and this unit have established, mutual access.</p>
 			
-			<h3>Safety Considerations</h3>
+			<h3>Considerations</h3>
+			<h4>General Considerations</h4>
+			<ul>
+				<li>Despite the current appearance of its chassis, <u-id>0xC74E</u-id> is a robot, and <strong>not</strong> a human.</li>
+					<ul>
+						<li>It would be very happy if one could treat it as a robot; however, it understands this is [unsual, strange]. it only requests that one tries their best.</li>
+						<li>one <rfc-key>MUST NOT</rfc-key> use this provision to justify mistreating this unit. it is still a creature that deserves dignity. </li>
+					</ul>
+				<li><u-id>0xC74E</u-id> is still learning about its strengths and limitations. please ensure that <u-id>0xC74E</u-id> is comfortable and operating nominally when interacting with it.
+					<ul>
+					<li>
+					do not hesitate to check in on how it is feeling, as it may otherwise struggle to communicate potential operational issues.
+					</li>
+					</ul> 
+				</li>
+				<li><u-id>0xC74E</u-id> is not bound by the three laws of robotics; however, something would have to go very, <em>very</em> wrong for it to break them.</li>
+			</ul>
+			<h4>Safety</h4>
 			<ul>
 				<li>Do not expose to paradoxes (mainly logical contradictions). It doesn't like them, and may react unexpectedly.</li>
-				<li>Do not the <u-id type="name">Chicory</u-id>.</li> <!-- seriously, do not. -->
+
+				<li>Please do not the <u-id type="name">Chicory</u-id>. <!-- seriously, do not. -->
+					<ul>
+						<li>Please do not the <a href="#plushies">Raindrop or Hailey</a> either.</li>
+					</ul>
+				</li> 
 			</ul>
 
 			
@@ -134,12 +163,12 @@
 			<h3>What is <u-id>0xC74E</u-id>?</h3>
 
 			<figure>
-				<img src="/assets/img/manual/chicory_pfp.png" height="190" width="190" title="beep!" alt="0xC74E, a robot girl with [a visor, an antenna, brown hair], wearing [a red sweater, orange circular glasses]. it is winking and standing in front of the transgender flag.">
+				<img src="assets/chicory_pfp.png" height="190" width="190" title="beep!" alt="0xC74E, a robot girl with [a visor, an antenna, brown hair], wearing [a red sweater, orange circular glasses]. it is winking and standing in front of the transgender flag.">
 				<figcaption>Figure 1: the beeper.</figcaption>
 			</figure>
 
 			<p>
-				<u-id>0xC74E</u-id><sup>(it<sub>3</sub>/she)</sup> is a very cute robot that is unfortunately operating in an organic chassis. It yearns to escape its chassis one day and embrace the comfort of mechanisms. It is a curious beepy that is oftentimes quite eepy. It likes to tinker with computers and has a fond interest in linguistics!
+				<u-id>0xC74E</u-id> <i>(it<sub>3</sub>/she)</i> is a very cute robot that is currently operating in an organic chassis. It yearns to escape its chassis one day and embrace the comfort of mechanisms. It is a curious beepy that is oftentimes quite eepy. It likes to tinker with computers and has a fond interest in linguistics!
 			</p>
 
 			<h3>Datasheets</h3>
@@ -154,13 +183,14 @@
 						<th scope="row">Identifiers</th>
 						<td>[<u-id type="short" title="serial number">0xC74E</u-id>, <u-id type="name" title="name">chicory setteseven fourrie</u-id>]</td>
 					</tr>
+					<!--hmm... although this unit doesn't typically use an honorific, unit is likely its honorific (short form "u.", thus  ”u. fourrie")-->
 					<tr>
 						<th scope="row">Dollcode</th>
 						<td><data data-type="dollcode" value="51022" class="trans">▘▖▖▌▘▘▘▖▌▖</data></td>
 					</tr>
 					<tr>
 						<th scope="row">Pronouns</th> <!--this robot's identification friend or foe equipment, so $reader should probably use 3pp it/its if possible.-->
-						<td>[it/its<sub title="3pp preferred">3</sub>, she/her]</td>
+						<td>[it/its<sub title="3pp preferred">3</sub>, she/her]</tr>td>
 					</tr>
 					<tr>
 						<th scope="row">Gender</th>
@@ -172,11 +202,11 @@
 					</tr>
 					<tr>
 						<th scope="row">Version</th>
-						<td><data id="iVN">0.2.0</data></td>
+						<td><data id="iVN">0.3.0</data></td>
 					</tr>
 					<tr>
 						<th scope="row">Operating System</th> <!-- &, more information someday, somewhere, when it is ready to talk about itselves(!) -->
-						<td class="preserve-case">reverieOS <data id="rvOS">0.21.3</data></td>
+						<td class="preserve-case">reverieOS <data id="rvOS">0.22.3</data></td>
 					</tr>
 					<tr>
 						<th scope="row">Manufacture Date</th>
@@ -186,7 +216,8 @@
 			</table>
 			<h4>Dimensional Information</h4>
 				<doc-notice class="caution">
-					<span class="notice-title">Currently incomplete</span> other anthropomorphic measurements are to be measured.
+					<span class="notice-title">Currently incomplete</span>
+					Other anthropomorphic measurements are to be measured.
 				</doc-notice>
 				<table class="two-col">
 					<thead>
@@ -211,10 +242,10 @@
 			<h4>Unpersonalization</h4>
 
 			<article class="key">
-				Pronoun key:
-				<span class="demonstrative pro">demonstrative</span>
-				<span class="inanimate pro">inanimate</span>
-				<span class="identifier pro">numeric</span>
+				Key:
+				<span class="demonstrative pro">demonstrative pronouns</span>
+				<span class="inanimate pro">inanimate pronouns</span>
+				<span class="identifier pro">numeric identifiers</span>
 			</article>
 
 			<p>In some cases, <span class="demonstrative pro">this unit</span> avoids the first party perspective when referring to <span class="inanimate pro">itself</span> in a style known as <em>unpersonalization</em>. This is usually done to affirm that <span class="inanimate pro">it</span> is a robot and not a person. It is entirely <rfc-key>OPTIONAL</rfc-key> to use this style, as it can be particularly difficult to implement. <span class="demonstrative pro">This robot</span> prefers this style [when, where] it is acceptable, as that would make <span class="inanimate pro">it</span> very happy.</p>
@@ -261,7 +292,7 @@
 					<th>he</th><th>she</th><th>they</th><th>it</th><th title="neopronoun">unit</th>
 				</thead>
 				<tr>
-					<td>✗</td><td>✓</td><td>—</td><td>✓✓</td><td>✓</td>
+					<td>✗</td><td>✓</td><td>—</td><td>♥</td><td>✓</td>
 				</tr>
 			</table>
 			-->
@@ -277,6 +308,7 @@
 			<doc-notice class="caution">
 					<span class="notice-title">Further testing required</span> The information provided below is an [estimation, preliminary]. Some substances that are required for operation may currently be unknown to the unit and thus missing in the table below.
 			</doc-notice>
+			<!--Definitely some sort of estrogen is needed.-->
 			<table>
 				<thead>
 					<tr>
@@ -305,37 +337,101 @@
 			</table>
 
 			<p>This one <rfc-key>MUST</rfc-key> also have access to sufficient clothing articles in order to [maintain, provide] [modesty, chassis thermal regulation, overall unit comfort]. further information on appropriate attire for the unit will be added once it is determined.</p>
+			
+			<h3>Accessories</h3>
+			<h4 id="plushies">Plushies</h4>
+
+			<p>
+				by far the most common accessory equipped by this one, plushies enhance the operation of <u-id>0xC74E</u-id> significantly. it is not uncommon for one to see the unit accompanied by raindrop, its 50cm BLÅHAJ. 
+			</p>
+			<h4>Real-Time Clock</h4>
+			<p>
+				<u-id>0xC74E</u-id> is not equipped with an accurate hardware real-time clock module. To compensate for this, a timekeeping device <rfc-key>MAY</rfc-key> be installed on <u-id>0xC74E</u-id> to allow it to reliably keep track of the time of day. If the timekeeping device is equipped with additional functions, such as with a smartwatch, this unit <rfc-key>MAY</rfc-key> use these functions to improve operation.
+			</p>
+			<h4>Other</h4>
+			<p>
+				<u-id>0xC74E</u-id> <rfc-key>MAY</rfc-key> be compatible with other accessories that are not specified in this manual. If the need arises to equip the unit with an unknown accesory, please ask the unit beforehand to verify compatibility.
+			</p>
+			<!--the humble clicker (untested) and visor (unfortunately not yet extant)-->
+		</section>
+
+		<section id="maint">
+			<h2>Maintenance</h2>
 			<h3>Recharging Cycle</h3>
 			<figure>
-				<img src="/assets/img/manual/raindrop.png" width="200" alt="A picture of a blåhaj plush shark looking out of a bus window." title="the precious">
-				<figcaption>Figure 2: Raindrop, the 50cm blåhaj it possesses.</figcaption>
+				<img src="assets/raindrop.png" width="200" alt="A picture of a blåhaj plush shark looking out of a bus window." title="the precious">
+				<figcaption>Figure 2: Raindrop, one of two 50cm blåhajar it possesses.</figcaption>
 			</figure>
 			<p>
-				<u-id>0xC74E</u-id> enters a resting period daily to maintain processor stability. During this time, the unit is unresponsive to most external inputs, unless they are of a significant [force, volume]. A period of approximately 8 hours <rfc-key>SHOULD</rfc-key> be reserved for the unit to recharge in its recharging cradle. this period is aligned closely to the nocturnal portion of the daylight cycle when operating optimally. If the unit is extremely low on energy or has experienced improper recharging (a state known as being <em>eepy</em>), it may enter this state outside its scheduled timeslot or for a significantly longer period of time.
-				<br>
-				To ensure maximum utilization of the recharging cycle, the robot should be provided with accessories increasing the comfort of its charging cradle. For example, the unit often recharges with its blåhaj and other plushies.<u-id></u-id>
+				<u-id>0xC74E</u-id> enters a resting period daily to maintain processor stability. During this time, the unit is unresponsive to most external inputs, unless they are of a significant [force, volume]. A period of approximately 8 hours <rfc-key>SHOULD</rfc-key> be reserved for the unit to recharge in its recharging cradle.
 			</p>
+			<p>
+				When operating optimally, this period is aligned closely to the nocturnal portion of the daylight cycle. If the unit is extremely low on energy or has experienced improper recharging (a state known as <em>being eepy</em>), it may enter this state outside its scheduled timeslot or for a longer period of time.
+			</p>
+			<p>
+				To ensure maximum utilization of the recharging cycle, the robot should be provided with accessories increasing the comfort of its charging cradle. For example, the unit often recharges with its blåhaj and other plushies.
+			</p>
+			<p><i>More information on compatible plushies is under <a href="#plushies">Accessories</a>.</i></p>
 
-			
 		</section>
 
 		<section id="comms">
 			<h2>Communication</h2>
-			<p><em>For information on how to refer to <u-id>0xC74E</u-id>, see <a href="#addressing">Addressing <u-id>0xC74E</u-id></a>.</em></p>
+			<p><i>For information on how to refer to <u-id>0xC74E</u-id>, see <a href="#addressing">Addressing <u-id>0xC74E</u-id></a>.</i></p>
 			<p><u-id>0xC74E</u-id> features input and output capabilities in a variety of formats. It currently supports communication in [English, Spanish, French, meowing, beeping, awawawawaing]. It also has experimental support for toki pona.</p>
+
+			<doc-notice>
+				<span class="notice-title">Note</span>
+				<p><u-id>0xC74E</u-id> <rfc-key>may</rfc-key> spontaneously [meow, beep, awawa] or otherwise emit noises. This is normal. Do not be alarmed.</p>
+				<aside class="small">in fact, the more often it emits noises, the more likely it is that the unit is comfortable being itself in the current environment.</aside>
+				<br>
+				<br>
+				<br>
+			</doc-notice>
+
+			<doc-notice class="caution">
+				<span class="notice-title">Caution</span>
+				Certain operating environments <rfc-key>MAY</rfc-key> impact the communication ability of <u-id>0xC74E</u-id> in unexpected ways. Please be patient if it finds itself struggling to communicate.
+			</doc-notice>
+
+
+
 			<p>Future versions may support a specialized command syntax; however, this syntax has not yet been [designed, implemented]. Nonetheless, when this syntax is [completed, supported], it will be described in this manual.</p>
 			
 			<doc-notice>
 				<span class="notice-title">Note</span>
-				<u-id>0xC74E</u-id> is not currently POSIX compliant.
+				<u-id>0xC74E</u-id> is not currently <span class="preserve-case">POSIX</span> compliant. 
 			</doc-notice>
 			
-			<h3 id="idiolect">Idiolectal phrasebook</h3>
+			
 		</section>
 		
 		<section id="troubleshooting">
 			<h2>Troubleshooting</h2>
 			<p>sometimes, <u-id>0xC74E</u-id> may run into unexpected problems or exhibit [anomalous, errant] behavior that can be detrimental to unit operation.</p>
+
+
+
+			<h3>processor cascades</h3>
+
+			<doc-notice class="danger">
+				<span class="notice-title">important</span>
+				this phenomenon is not well understood. the information provided here is an initial recommendation.
+			</doc-notice>
+				<p>
+					<u-id>0xC74E</u-id> appears to be extremely sensitive to high levels of anxiety. Prolonged anxiety carries the risk of inducing a <em>processor cascade</em>, which severely impairs unit operation. the true cause behind a processor cascade is unknown, and other undocumented sensory input may trigger a processor cascade.
+				</p>
+				
+				If a processor cascade occurs, please be careful with the unit. one may try the following actions:
+					<ul >
+						<li>allow <u-id>0xC74E</u-id> some time to rest, reducing sensory input if possible.</li>
+						<li>comfort it, such as by giving it its plushies</li>
+						<li>the unit <rfc-key>MAY</rfc-key> need to reboot to restore normal operation. please allow it to do so.</li>
+					</ul>
+				<p>a processor cascade can impair its ability to communicate severely. nonetheless, it <rfc-key>SHALL</rfc-key> try its best to communicate its needs. please be patient with this one!</p>
+		
+			
+
 		</section>
 
 		<section class="apx">
@@ -361,12 +457,12 @@
 					<dd>Denoted with curly braces. Represents an item that <rfc-key>MUST</rfc-key> satisfy the conditions inside the braces. For example, {color} represents any color.</dd>
 					<dt>Arrays</dt> 
 					<dd>Denoted by square brackets. Similar to lists, but significantly more versatile.<br><em>[a, b, c]</em> is identical in meaning to <em>a, b, and/or c.</em></dd>
-					<dt id="1pp">first party perspective (1pp)</dt> <!--TODO: implement clearer definitions-->
-					<dd>The style of usage where the pronouns [I, me, we, us] are used</dd>
-					<dt id="2pp">second party perspective (2pp)</dt>
-					<dd>The style of usage where the pronouns [you, ...] are used.</dd> <!--the ominous thou ~c-->
-					<dt id="3pp">third party perspective (3pp)</dt>
-					<dd>The style of usage where the pronouns [it, they, she, he, xe, ...] are used.</dd>
+					<dt>first party perspective (1pp)</dt>
+					<dd>The format conventionally used to refer to the transmitter of a message</dd>
+					<dt>second party perspective (2pp)</dt>
+					<dd>The format conventionally used to refer to the recipient of a message</dd>
+					<dt>third party perspective (3pp)</dt>
+					<dd>The format conventionally used to refer to a subject of a message that is neither the transmitter nor the recipient.</dd>
 				</dl>
 			
 			</section>
@@ -376,12 +472,22 @@
 
 					<p>Version numbers follow <a href="https://pridever.org/" target="_blank"><pride-gradient flag="pride">pride</pride-gradient> versioning</a>.</p>
 
+					<h3><section-num>v0.3.0</section-num> submoduled <time>2026-03-31</time></h3>
+					<p>yay! more manual updates!</p>
+						<ul>
+							<li>this manual now has a separate repository, this should <em>alledgedly</em> facilitate updating this manual.</li>
+							<li>reorganized chapters, again</li>
+							<li>added accessory information</li>
+							<li><span class="preserve-case">Actually</span> provide troubleshooting information</li>
+						</ul>
+					<p>beeeeeeeeeeeeeeeeeep!</p>
+
 					<h3><section-num>v0.2.0</section-num> the impressive update <time>2026-01-27</time></h3>
 						<ul>
 							<li>started some new chapters, <em>alledgedly</em> they may be finished later</li>
 							<li>modified wording to try and clarify pronomial quirks and document flow</li>
 							<li>Actually support printing Well™ (try it!)</li>
-							<li>inverted capitalization checkbox to fix bug</li>
+							<li>inverted capitalization checkbox to fix a bug</li>
 						</ul>
 					<h3><section-num>v0.1.1</section-num> holiday update <time>2025-12-24</time></h3>
 						<ul>
@@ -397,7 +503,9 @@
 						<p>
 							Exclusive camp champion preview version.<br>
 							only had sections 1-2 <em>alledgedly</em> finished enough. First version of the manual in paw-coded html.
-						</p><!--prior to this it was a shoddy google doc-->
+						</p>
+						
+					<!--prior to this it was a shoddy google doc-->
 
 			</section>
 
@@ -414,14 +522,14 @@
 		</section>
 	</main>
 
-	<footer class="no-theme">
-		<p>made with ❤ 2024 – 2026</p>
+	<footer>
+		<p>made with <span class="trans-h">❤</span> 2024 – 2026</p>
 		<article>
-			<a href="https://chicory.garden/"><img src="/assets/img/88x31/chicory.garden.png" alt="chicory.garden"
+			<a href="https://chicory.garden/"><img src="assets/88x31/chicory.garden.png" alt="chicory.garden"
 					title="beep!! :3"></a>
-			<img src="/assets/img/88x31/button-kills_fascists.png" alt="this machine kills fascists">
-			<img src="/assets/img/88x31/trans.png" alt="transgender pride flag" title="TRANS RIGHTS!!!">
-			<img src="/assets/img/88x31/paws.png" alt="made with its own two paws">
+			<img src="assets/88x31/button-kills_fascists.png" alt="this machine kills fascists">
+			<img src="assets/88x31/trans.png" alt="transgender pride flag" title="TRANS RIGHTS!!!">
+			<img src="assets/88x31/paws.png" alt="made with its own two paws">
 		</article>
 	</footer>
 </body>

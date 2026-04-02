@@ -94,7 +94,7 @@ body {
 
 	& header {
 		color: white;
-		background: #212 url(/assets/img/manual/waves.svg) repeat-x 50em/0em center;
+		background: #212 url(assets/waves.svg) repeat-x 50em/0em center;
 		background-size: 50em;
 		padding: 0;
 		padding-top: 30%;

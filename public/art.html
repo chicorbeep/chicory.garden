@@ -14,7 +14,7 @@
 			flex-wrap: wrap;
 			gap: 8px;
 
-			& figure {
+			figure {
 				border: 1px solid #b06;
 				width: max-content;
 				display: block;
@@ -23,18 +23,32 @@
 				height: fit-content;
 				background-color: #402;
 
-				& img {
+				img {
 					image-rendering: pixelated;
 				}
 
-				& figcaption {
+				figcaption {
 					font-weight: bold;
 					text-align: center;
 
-					& time {
+					time {
 						font-weight: normal;
 						font-size: 80%;
 					}
+
+					em {
+						font-weight: normal;
+						font-size: 80%;
+
+						&::before {
+							content: "(";
+						}
+						
+						&::after {
+							content: ")";
+						}
+					}
+
 				}
 			}
 	}
@@ -52,31 +66,41 @@
 
 		<hgroup>
 			<h1>art</h1>
+			<p>sometimes this unit draws. here are some selected works it feels comfortable broadcasting.</p>
 		</hgroup>
-		<p>sometimes this unit draws. here are some selected works it feels comfortable broadcasting.</p>
-	
+		
+		<h2>the gallery</h2>
 
 		<section class="gallery">
+
+		
+
+		<figure>
+			<img src="/assets/img/art/trans_day_of_visibility.png">
+			<figcaption>trans day of visibility!! <time>2026-03-31</time></figcaption>
+		</figure>
+
+
+		<figure>
+			<img src="/assets/img/art/squip.png">
+			<figcaption>squip <time>2026-03-20</time></figcaption>
+		</figure>
+
+
 		<figure>
 			<img src="/assets/img/art/christmas_tree_not_borked.png">
 			<figcaption>happy holidays! <time>2025-12-24</time></figcaption>
 		</figure>
 		
-
-		<figure>
-			<img src="/assets/img/manual/chicory_pfp.png">
-			<figcaption>current pfp <time>2025-11-19</time></figcaption>
-		</figure>
-		
 		<figure>
 			<img src="/assets/img/art/scrunkly.png">
-			<figcaption>the scrunkly chicory <time>2025-10-23</time></figcaption>
+			<figcaption>the scrunkly chicory <em>&phi;<sub>1</sub></em> <time>2025-10-23</time></figcaption>
 		</figure>
 		
 		
 		<figure>
 			<img src="/assets/img/art/chicory_refsheet.png">
-			<figcaption>the chicory refsheet <time>2025-08-31</time></figcaption>
+			<figcaption>the chicory refsheet <em>currently outdated °-°</em> <time>2025-08-31</time></figcaption>
 		</figure>
 
 
@@ -85,6 +109,19 @@
 			<figcaption>the eepy beepy <time>2025-08-21</time></figcaption>
 		</figure>
 
+		</section>
+
+		<h2>profile pictures</h2>
+
+		<section class="gallery">
+			<figure>
+				<img src="/assets/img/art/pfp2026.png" width="166">
+				<figcaption>the silly <time>2026-03-31</time></figcaption>
+			</figure>
+					<figure>
+			<img src="/assets/img/art/chicory_pfp.png">
+			<figcaption>a pfp <time>2025-11-19</time></figcaption>
+		</figure>
 		</section>
 	
 	
